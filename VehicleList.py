@@ -6,7 +6,7 @@ class Vehicle(object):
         self.type = type
         self.seats = seats
         self.name = name
-        self.fueleff = fueleff
+        self.fueleff = fueleff #in mpg
 
 
 
@@ -35,8 +35,32 @@ vehicleList.append(Vehicle(40685, "truck",5,"Chevy Colorado", 22.7))
     #Test
 print (vehicleList[4].name)
 
-#kenny test
-#test git commit
+#Kenny Cars
+
+vehicleList.append(Vehicle(63100, "car",5,"E 300 4MATIC Sedan", 28.93))
+vehicleList.append(Vehicle(47300, "suv",5,"GLC 300 4MATIC SUV", 27.13))
+vehicleList.append(Vehicle(47400, "suv",5,"C 300 4MATIC Wagon", 27.31))
+vehicleList.append(Vehicle(60200, "suv",5,"GLC 350e 4MATIC", 74.11))
+vehicleList.append(Vehicle(60500, "car",2,"SLC 300 Roadster", 27.3))
+
+vehicleList.append(Vehicle(102750, "car",4,"LC 500", 16.0))
+vehicleList.append(Vehicle(55350, "suv",5,"RX 350", 19.28))
+vehicleList.append(Vehicle(64500, "suv",5,"RX 450H", 31.36))
+vehicleList.append(Vehicle(66250, "suv",7,"RX 350L", 25))
+vehicleList.append(Vehicle(134200, "car",5,"LS 500H", 30.95))
+
+vehicleList.append(Vehicle(72649, "truck",5,"2019 F-150 Raptor", 17.96))
+vehicleList.append(Vehicle(44099, "truck",6,"2019 Super Duty F-250 XLT", 15.00))
+vehicleList.append(Vehicle(394330, "car",5,"2019 Taurus SEL", 26.13))
+vehicleList.append(Vehicle(17168, "car",5,"SE HATCH", 38.56))
+vehicleList.append(Vehicle(76049, "car",8,"2019 Expedition Limited MAX", 21.00))
+
+vehicleList.append(Vehicle(36900, "suv",5,"Audi Q2", 36.80))
+vehicleList.append(Vehicle(44536, "car",5,"Audi A3", 33.10))
+vehicleList.append(Vehicle(93206, "car",5,"Audi RS 5 Coupé", 27.00))
+vehicleList.append(Vehicle(48003, "car",5,"Audi A4 Avant", 26.70))
+vehicleList.append(Vehicle(68537, "car",5,"Audi S4 Avant", 29.80))
+
 
 
 #Next Person Cars
