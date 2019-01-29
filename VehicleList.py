@@ -8,7 +8,20 @@ class Vehicle(object):
         self.name = name
         self.fueleff = fueleff
 
+#ToString method for a vehicle
+def tostring(Vehicle):
+    print("Here is a/an "+Vehicle.type+". It is a 2019 "+Vehicle.name+", it seats "+str(Vehicle.seats)+" and gets "+str(Vehicle.fueleff)+
+          " miles to the gallon. You can walk away with this "+Vehicle.type+" for $"+str(Vehicle.price))
+    if (Vehicle.fueleff < 1):
 
+        print("This vehicle is also electric")
+
+from random import randrange
+
+#Method that takes random car from list. Once we have narrowed down the list, we can use this to show the user a possible car match
+def getcar(list):
+    index = randrange(len(list))
+    tostring(list.pop(index))
 
 vehicleList = []
 #Hans Fuhrmann Cars
@@ -32,8 +45,7 @@ vehicleList.append(Vehicle(55795, "car",4,"Chevy Camaro", 23.5))
 vehicleList.append(Vehicle(65180, "suv",9,"Chevy Suburban", 17.9))
 vehicleList.append(Vehicle(52690, "truck",6,"Chevy Silverado", 20.0))
 vehicleList.append(Vehicle(40685, "truck",5,"Chevy Colorado", 22.7))
-    #Test
-print (vehicleList[4].name)
+
 
 
 #Jae Ung Kim(Volvo, Buick, Subaru, Honda)
@@ -96,11 +108,11 @@ vehicleList.append(Vehicle(64500, "suv",5,"RX 450H", 31.36))
 vehicleList.append(Vehicle(66250, "suv",7,"RX 350L", 25))
 vehicleList.append(Vehicle(134200, "car",5,"LS 500H", 30.95))
 
-vehicleList.append(Vehicle(72649, "truck",5,"2019 F-150 Raptor", 17.96))
-vehicleList.append(Vehicle(44099, "truck",6,"2019 Super Duty F-250 XLT", 15.00))
-vehicleList.append(Vehicle(394330, "car",5,"2019 Taurus SEL", 26.13))
-vehicleList.append(Vehicle(17168, "car",5,"SE HATCH", 38.56))
-vehicleList.append(Vehicle(76049, "car",8,"2019 Expedition Limited MAX", 21.00))
+vehicleList.append(Vehicle(72649, "truck",5,"F-150 Raptor", 17.96))
+vehicleList.append(Vehicle(44099, "truck",6,"Super Duty F-250 XLT", 15.00))
+vehicleList.append(Vehicle(394330, "car",5,"Ford Taurus SEL", 26.13))
+vehicleList.append(Vehicle(17168, "car",5,"Ford SE HATCH", 38.56))
+vehicleList.append(Vehicle(76049, "car",8,"Ford Expedition Limited MAX", 21.00))
 
 vehicleList.append(Vehicle(36900, "suv",5,"Audi Q2", 36.80))
 vehicleList.append(Vehicle(44536, "car",5,"Audi A3", 33.10))
@@ -132,3 +144,5 @@ vehicleList.append(Vehicle(44895, "suv",5,"Cadillac XT5", 19.0))
 vehicleList.append(Vehicle(86870, "car",5,"Cadillac CT6 Plug In", 62.0))
 vehicleList.append(Vehicle(46995, "car",5,"Cadillac CTS", 14.0))
 vehicleList.append(Vehicle(68645, "car",5,"Cadillac ATS", 22.0))
+
+getcar(vehicleList)
