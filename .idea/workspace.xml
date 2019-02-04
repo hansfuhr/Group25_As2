@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1e8885bd-1841-4421-b94f-87447de1956e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/VehicleList.py" beforeDir="false" afterPath="$PROJECT_DIR$/VehicleList.py" afterDir="false" />
-    </list>
+    <list default="true" id="1e8885bd-1841-4421-b94f-87447de1956e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +13,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/VehicleList.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="703">
+            <state relative-caret-position="825">
               <caret line="61" column="66" lean-forward="true" selection-start-line="61" selection-start-column="66" selection-end-line="61" selection-end-column="66" />
             </state>
           </provider>
@@ -43,7 +41,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -55,10 +52,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lab-3-building-a-web-server-kenny850917" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -138,7 +136,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/VehicleList.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
+        <state relative-caret-position="825">
           <caret line="61" column="66" lean-forward="true" selection-start-line="61" selection-start-column="66" selection-end-line="61" selection-end-column="66" />
         </state>
       </provider>
