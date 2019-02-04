@@ -37,6 +37,7 @@ def getcar(list):
     tostring(list.pop(index))
 
 vehicleList = []
+
 #Hans Fuhrmann Cars
 vehicleList.append(Vehicle(39490, "car",5,"Dodge Challenger", 19))
 vehicleList.append(Vehicle(43095, "car",5,"Dodge Charger", 20))
@@ -161,8 +162,7 @@ vehicleList.append(Vehicle(68645, "car",5,"Cadillac ATS", 22))
 
 print(len(vehicleList))
 greetings_i = ("hello", "hi", "howdy", "what's up","hey", "sup")
-greetings_r = ("My name is Autobot, what is your name?", "Welcome to Autobot, what can I call you?", "AUTOBOT INITIATED. ENTER NAME",
-               "Hey sexy, you're cute, what's your name?")
+greetings_r = ("My name is Autobot, what is your name?", "Welcome to Autobot, what can I call you?", "AUTOBOT INITIATED. ENTER NAME")
 uservehicle = Vehicle(9999999, "", 0, "", 999)
 def check_greeting(sentance):
     words = sentance.split()
@@ -227,20 +227,24 @@ check_seats(sentance)
 check_type(sentance)
 check_fuel(sentance)
 check_price(sentance)
-for vehicle in vehicleList:
-    if(vehicle.type!=uservehicle.type):
-        vehicleList.remove(vehicle)
-for vehicle in vehicleList:
-    if(vehicle.price>int(uservehicle.price)):
-        vehicleList.remove(vehicle)
-for vehicle in vehicleList:
-    if(vehicle.fueleff<int(uservehicle.fueleff)):
-        vehicleList.remove(vehicle)
-for vehicle in vehicleList:
-    if(vehicle.seats<int(uservehicle.seats)):
-        vehicleList.remove(vehicle)
-x = False
+#for vehicle in vehicleList:
+ #   if(vehicle.type!=uservehicle.type):
+  #      vehicleList.remove(vehicle)
+#for vehicle in vehicleList:
+ #   if(vehicle.price>int(uservehicle.price)):
+  #      vehicleList.remove(vehicle)
+#for vehicle in vehicleList:
+ #   if(vehicle.fueleff<int(uservehicle.fueleff)):
+  #      vehicleList.remove(vehicle)
 print(len(vehicleList))
+vehicleList = [vehicle for vehicle in vehicleList if vehicle.price <= int(uservehicle.price)]
+vehicleList = [vehicle for vehicle in vehicleList if vehicle.type == uservehicle.type]
+vehicleList = [vehicle for vehicle in vehicleList if vehicle.fueleff >= int(uservehicle.fueleff)]
+vehicleList = [vehicle for vehicle in vehicleList if vehicle.seats >= int(uservehicle.seats)]
+
+
+x = False
+print("I have found "+str(len(vehicleList))+" vehicles that match your criteria!")
 while(x==False):
     getcar(vehicleList)
     input("Are you happy with this vehicle?")
