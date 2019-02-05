@@ -103,6 +103,7 @@ vehicleList.append(Vehicle(31305, "suv", 5, "Jeep Cherokee" , 24))
 vehicleList.append(Vehicle(27297, "suv", 5, "Jeep Compass" , 17))
 vehicleList.append(Vehicle(37862, "suv", 8, "Jeep Grand Cherokee" , 21))
 vehicleList.append(Vehicle(20745, "suv", 5, "Jeep Renegade", 20))
+vehicleList.append(Vehicle(55985, "truck", 5, "Jeep Gladiator", 16))
 vehicleList.append(Vehicle(53400, "car", 5 , "Tesla Model 3", 999))
 vehicleList.append(Vehicle(124600, "car", 7 , "Tesla Model S", 999))
 vehicleList.append(Vehicle(127700, "suv", 6 , "Tesla Model X", 999))
@@ -110,17 +111,17 @@ vehicleList.append(Vehicle(257000, "car", 4 , "Tesla Roadster 2", 999))
 
 #Kenny Cars
 
-vehicleList.append(Vehicle(63100, "car",5,"E 300 4MATIC Sedan", 29))
-vehicleList.append(Vehicle(47300, "suv",5,"GLC 300 4MATIC SUV", 27))
-vehicleList.append(Vehicle(47400, "suv",5,"C 300 4MATIC Wagon", 27))
-vehicleList.append(Vehicle(60200, "suv",5,"GLC 350e 4MATIC", 74))
-vehicleList.append(Vehicle(60500, "car",2,"SLC 300 Roadster", 27))
+vehicleList.append(Vehicle(63100, "car",5,"Mercedes E 300 4MATIC Sedan", 29))
+vehicleList.append(Vehicle(47300, "suv",5,"Mercedes GLC 300 4MATIC SUV", 27))
+vehicleList.append(Vehicle(47400, "suv",5,"Mercedes C 300 4MATIC Wagon", 27))
+vehicleList.append(Vehicle(60200, "suv",5,"Mercedes GLC 350e 4MATIC", 74))
+vehicleList.append(Vehicle(60500, "car",2,"Mercedes SLC 300 Roadster", 27))
 
-vehicleList.append(Vehicle(102750, "car",4,"LC 500", 16))
-vehicleList.append(Vehicle(55350, "suv",5,"RX 350", 19))
-vehicleList.append(Vehicle(64500, "suv",5,"RX 450H", 31))
-vehicleList.append(Vehicle(66250, "suv",7,"RX 350L", 25))
-vehicleList.append(Vehicle(134200, "car",5,"LS 500H", 31))
+vehicleList.append(Vehicle(102750, "car",4,"Lexus LC 500", 16))
+vehicleList.append(Vehicle(55350, "suv",5,"Lexus RX 350", 19))
+vehicleList.append(Vehicle(64500, "suv",5,"Lexus RX 450H", 31))
+vehicleList.append(Vehicle(66250, "suv",7,"Lexus RX 350L", 25))
+vehicleList.append(Vehicle(134200, "car",5,"Lexus LS 500H", 31))
 
 vehicleList.append(Vehicle(72649, "truck",5,"F-150 Raptor", 18))
 vehicleList.append(Vehicle(44099, "truck",6,"Super Duty F-250 XLT", 15))
@@ -135,11 +136,11 @@ vehicleList.append(Vehicle(48003, "car",5,"Audi A4 Avant", 27))
 vehicleList.append(Vehicle(68537, "car",5,"Audi S4 Avant", 30))
 
 #Tayler Verhaegen(Nissan, KIA, Volkswagen, Cadillac)
-vehicleList.append(Vehicle(36498, "truck",3,"Nissan Titan", 15))
+vehicleList.append(Vehicle(36498, "truck",5,"Nissan Titan", 15))
 vehicleList.append(Vehicle(33198, "suv",7,"Nissan Pathfinder", 20))
 vehicleList.append(Vehicle(27998, "car",5,"Nissan Altima", 27))
 vehicleList.append(Vehicle(26798, "suv",5,"Nissan Rouge", 33))
-vehicleList.append(Vehicle(24498, "Truck",4,"Nissan Frontier", 17))
+vehicleList.append(Vehicle(24498, "truck",4,"Nissan Frontier", 17))
 
 vehicleList.append(Vehicle(20095, "suv",5,"KIA Soul", 26))
 vehicleList.append(Vehicle(14795, "car",5,"KIA Rio", 29))
@@ -158,19 +159,32 @@ vehicleList.append(Vehicle(44895, "suv",5,"Cadillac XT5", 19))
 vehicleList.append(Vehicle(86870, "car",5,"Cadillac CT6 Plug In", 62))
 vehicleList.append(Vehicle(46995, "car",5,"Cadillac CTS", 14))
 vehicleList.append(Vehicle(68645, "car",5,"Cadillac ATS", 22))
+#Meme cars
+vehicleList.append(Vehicle(232000, "suv", 5, "Lamborghini Uras", 14))
+vehicleList.append(Vehicle(443804, "car", 5, "Lamborghini Aventador", 11))
+vehicleList.append(Vehicle(515000, "truck", 4, "Mercedes G63 AMG", 13))
 
-
-print(len(vehicleList))
-greetings_i = ("hello", "hi", "howdy", "what's up","hey", "sup")
-greetings_r = ("My name is Autobot, what is your name?", "Welcome to Autobot, what can I call you?", "AUTOBOT INITIATED. ENTER NAME")
+greetings_i = ("yes", "yup","car","truck","suv","sure","ok","okay")
+greetings_r = ("Excellent, let's start with your name", "That's great to hear, what can I call you?", "Before I help you, could you please enter your name?")
+greetings2_i=("no","nah","thanks","good")
+greetings2_r=("Well have an excellent day!","I'm sorry to hear that, goodbye", "That's unfortunate",":(")
 uservehicle = Vehicle(9999999, "", 0, "", 999)
 def check_greeting(sentance):
     words = sentance.split()
     for word in words:
         if word.lower() in greetings_i:
             print (random.choice(greetings_r))
-sentance = input("Hello\n")
+def check_greeting2(sentance):
+    words = sentance.split()
+    for word in words:
+        if word.lower() in greetings2_i:
+            print (random.choice(greetings2_r))
+welcome = ("Welcome to Autobot, can I assist you today?", "Hello, my name is Autobot, can I help you find a vehicle today?", "Good day! My name is Autobot, can we get you rolling in a new vehicle?")
+print(random.choice(welcome))
+print("We currently have "+str(len(vehicleList))+" vehicles in our inventory.")
+sentance = input()
 check_greeting(sentance)
+check_greeting2(sentance)
 username = input("Name:")
 
 name_r = ("Nice to meet you "+username, "Pleasure to meet you "+username, "Well "+username+", I am at your service")
@@ -221,31 +235,38 @@ def check_type(sentance):
             type = input("Car, truck, or SUV:")
             uservehicle.settype(type.lower())
 check_name()
-sentance = input("What are some important aspects you want in \nyour vehicle " +username+"(such as fuel efficiency, \nseating, price, or function of vehicle)?\n")
+print("What are some important aspects you want in \nyour vehicle?")
+sentance = input("Currently we support the following features: \n -Fuel Efficiency \n -Seating \n -Price \n -Type of vehicle\n")
 
 check_seats(sentance)
 check_type(sentance)
 check_fuel(sentance)
 check_price(sentance)
-#for vehicle in vehicleList:
- #   if(vehicle.type!=uservehicle.type):
-  #      vehicleList.remove(vehicle)
-#for vehicle in vehicleList:
- #   if(vehicle.price>int(uservehicle.price)):
-  #      vehicleList.remove(vehicle)
-#for vehicle in vehicleList:
- #   if(vehicle.fueleff<int(uservehicle.fueleff)):
-  #      vehicleList.remove(vehicle)
-print(len(vehicleList))
-vehicleList = [vehicle for vehicle in vehicleList if vehicle.price <= int(uservehicle.price)]
-vehicleList = [vehicle for vehicle in vehicleList if vehicle.type == uservehicle.type]
-vehicleList = [vehicle for vehicle in vehicleList if vehicle.fueleff >= int(uservehicle.fueleff)]
-vehicleList = [vehicle for vehicle in vehicleList if vehicle.seats >= int(uservehicle.seats)]
 
 
+if(int(uservehicle.price)<9999999):
+    vehicleList = [vehicle for vehicle in vehicleList if vehicle.price <= int(uservehicle.price)]
+if(uservehicle.type!=""):
+    vehicleList = [vehicle for vehicle in vehicleList if vehicle.type == uservehicle.type]
+if(int(uservehicle.fueleff)<999):
+    vehicleList = [vehicle for vehicle in vehicleList if vehicle.fueleff >= int(uservehicle.fueleff)]
+if(int(uservehicle.seats)>0):
+    vehicleList = [vehicle for vehicle in vehicleList if vehicle.seats == int(uservehicle.seats)]
+
+
+ending_i = ("yes", "thanks", "good", "yea", "yeah")
+ending_r = ("My pleasure "+username+", have a great day!", "Well have a wonderful day "+username, "I'm glad I could help, bye for now!")
+
+def check_ending(sentance):
+    words = sentance.split()
+    for word in words:
+        if word.lower() in ending_i:
+            print (random.choice(ending_r))
+            return True
+    return False
 x = False
 print("I have found "+str(len(vehicleList))+" vehicles that match your criteria!")
 while(x==False):
     getcar(vehicleList)
-    input("Are you happy with this vehicle?")
-
+    sentance =input("Are you happy with this vehicle?")
+    x = check_ending(sentance)
