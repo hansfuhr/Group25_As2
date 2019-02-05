@@ -25,9 +25,9 @@ class Vehicle(object):
 def tostring(Vehicle):
     print("Here is a/an "+Vehicle.type+". \nIt is a 2019 "+Vehicle.name+", it seats "+str(Vehicle.seats)+" \nand gets "+str(Vehicle.fueleff)+
           " miles to the gallon. \nYou can walk away with this "+Vehicle.type+" for $"+str(Vehicle.price))
-    if (Vehicle.fueleff < 1):
+    if (Vehicle.fueleff > 100):
 
-        print("This vehicle is also electric")
+        print("This vehicle is also electric!")
 
 from random import randrange
 
@@ -163,8 +163,13 @@ vehicleList.append(Vehicle(68645, "car",5,"Cadillac ATS", 22))
 vehicleList.append(Vehicle(232000, "suv", 5, "Lamborghini Uras", 14))
 vehicleList.append(Vehicle(443804, "car", 5, "Lamborghini Aventador", 11))
 vehicleList.append(Vehicle(515000, "truck", 4, "Mercedes G63 AMG", 13))
+vehicleList.append(Vehicle(1499, "car", 1, "John Deere Ride-along Mower", 4))
+vehicleList.append(Vehicle(1, "car", 1, "Small Cardboard Box", 999))
+vehicleList.append(Vehicle(10, "car", 4, "Big Cardboard Box", 999))
+vehicleList.append(Vehicle(5, "car", 2, "Medium Cardboard Box", 999))
+vehicleList.append(Vehicle(15000, "suv", 72, "School Bus", 5))
 
-greetings_i = ("yes", "yup","car","truck","suv","sure","ok","okay")
+greetings_i = ("yes", "yup","car","truck","suv","sure","ok","okay","perhaps")
 greetings_r = ("Excellent, let's start with your name", "That's great to hear, what can I call you?", "Before I help you, could you please enter your name?")
 greetings2_i=("no","nah","thanks","good")
 greetings2_r=("Well have an excellent day!","I'm sorry to hear that, goodbye", "That's unfortunate",":(")
@@ -200,7 +205,7 @@ def check_seats(sentance):
             seats = input("Seats:")
             uservehicle.setseats(seats)
 fuel_i = ("fuel", "fuel efficiency", "fuels", "fuel,", "fuel efficiency,", "fuels,")
-fuel_r = ("What is the worst fuel efficiency you would be okay with?")
+fuel_r = ("What is the worst fuel efficiency you would be okay with? \n (Anything above 100mpg is considered electric)")
 
 
 
@@ -254,7 +259,7 @@ if(int(uservehicle.seats)>0):
     vehicleList = [vehicle for vehicle in vehicleList if vehicle.seats == int(uservehicle.seats)]
 
 
-ending_i = ("yes", "thanks", "good", "yea", "yeah")
+ending_i = ("yes", "thanks", "good", "yea", "yeah","sure","cool","absolutely")
 ending_r = ("My pleasure "+username+", have a great day!", "Well have a wonderful day "+username, "I'm glad I could help, bye for now!")
 
 def check_ending(sentance):
@@ -265,8 +270,9 @@ def check_ending(sentance):
             return True
     return False
 x = False
-print("I have found "+str(len(vehicleList))+" vehicles that match your criteria!")
+print("\nI have found "+str(len(vehicleList))+" vehicles that match your criteria!")
 while(x==False):
+    print("\n")
     getcar(vehicleList)
     sentance =input("Are you happy with this vehicle?")
     x = check_ending(sentance)
