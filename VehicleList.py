@@ -1,4 +1,5 @@
 import random
+import sys
 class Vehicle(object):
 
     def __init__(self, price, type, seats, brand, name, fueleff):
@@ -24,138 +25,139 @@ class Vehicle(object):
         self.fueleff = fueleff
 
 
-#List we will use for all cars and then matching criteria
-vehicleList = []
+def getVehicles():
+    # List we will use for all cars and then matching criteria
+    vehicleList = []
 
-#Database of Cars
-#Hans Fuhrmann Cars
-vehicleList.append(Vehicle(39490, "car",5,"Dodge","Challenger", 19))
-vehicleList.append(Vehicle(43095, "car",5,"Dodge","Charger", 20))
-vehicleList.append(Vehicle(41345, "suv",7,"Dodge","Durango", 22))
-vehicleList.append(Vehicle(57770, "truck",5,"Ram","3500", 15))
-vehicleList.append(Vehicle(36140, "truck",5,"Ram","1500", 15))
-vehicleList.append(Vehicle(57770, "truck",6,"Ram","3500", 15))
-vehicleList.append(Vehicle(36140, "truck",6,"Ram","1500", 15))
-vehicleList.append(Vehicle(131800, "car",5,"BMW","M6 Gran Coupe", 17))
-vehicleList.append(Vehicle(59765, "suv",4,"BMW","i3", 89))
-vehicleList.append(Vehicle(56800, "car",5,"BMW","3 series sedan", 26))
-vehicleList.append(Vehicle(86000, "suv",7,"BMW","X5", 22))
-vehicleList.append(Vehicle(173465, "car",4,"BMW","i8", 40))
-vehicleList.append(Vehicle(139700, "suv",5,"Porsche","Cayenne Turbo", 17))
-vehicleList.append(Vehicle(63700, "car",2,"Porsche","718 Cayman", 24))
-vehicleList.append(Vehicle(334000, "car",2,"Porsche","911 GT2 RS", 24))
-vehicleList.append(Vehicle(116800, "car",4,"Porsche","Panemera 4s", 24))
-vehicleList.append(Vehicle(150300, "car",4,"Porsche","Taycan", 310))
-vehicleList.append(Vehicle(10095, "car",4,"Chevy","Spark", 34))
-vehicleList.append(Vehicle(55795, "car",4,"Chevy","Camaro", 24))
-vehicleList.append(Vehicle(65180, "suv",9,"Chevy","Suburban", 18))
-vehicleList.append(Vehicle(52690, "truck",6,"Chevy","Silverado", 20))
-vehicleList.append(Vehicle(52690, "truck",5,"Chevy","Silverado", 20))
-vehicleList.append(Vehicle(40685, "truck",5,"Chevy","Colorado", 23))
-#Jae Ung Kim(Volvo, Buick, Subaru, Honda)
-vehicleList.append(Vehicle(59750, "suv",5,"Volvo","XC90", 21))
-vehicleList.append(Vehicle(46800, "suv",5,"Volvo","XC60", 20))
-vehicleList.append(Vehicle(40300, "suv",5,"Volvo","XC40", 23))
-vehicleList.append(Vehicle(59950, "car",5,"Volvo","S90", 22))
-vehicleList.append(Vehicle(166500, "truck",5,"Volvo","VNR 640", 15))
-vehicleList.append(Vehicle(50445, "car",5,"Buick","Lacrosse", 25))
-vehicleList.append(Vehicle(26500, "suv",5,"Buick","Encore", 26))
-vehicleList.append(Vehicle(38400, "suv",5,"Buick","Envision", 29))
-vehicleList.append(Vehicle(62200, "suv",5,"Buick","Enclave", 27))
-vehicleList.append(Vehicle(44145, "car",5,"Buick","Regal GS", 19))
-vehicleList.append(Vehicle(27995, "suv",5,"Subaru","Forester", 25))
-vehicleList.append(Vehicle(19995, "car",5,"Subaru","Impreza", 27))
-vehicleList.append(Vehicle(24995, "car",5,"Subaru","Legacy", 25))
-vehicleList.append(Vehicle(29295, "car",5,"Subaru","Outback", 25))
-vehicleList.append(Vehicle(27995, "car",4,"Subaru","BRZ", 21))
-vehicleList.append(Vehicle(21190, "car",5,"Honda","Civic Coupe", 26))
-vehicleList.append(Vehicle(33390, "car",5,"Honda","Accord Hybrid", 49))
-vehicleList.append(Vehicle(27990, "car",5,"Honda","Insight Hybrid", 55))
-vehicleList.append(Vehicle(40100, "car",6,"Honda","Clarity Plugin Hybrid", 42))
-vehicleList.append(Vehicle(40790, "truck",5,"Honda","Ridgeline", 26))
-#Pierre Frigon(Toyota, Mazda, Jeep, Tesla)
-vehicleList.append(Vehicle(16595, "car", 5 , "Toyota","Yaris" , 30))
-vehicleList.append(Vehicle(27650, "car", 5, "Toyota","Prius" , 53))
-vehicleList.append(Vehicle(27990, "suv", 5, "Toyota","RAV4", 25))
-vehicleList.append(Vehicle(37300, "suv", 8, "Toyota","Highlander", 20))
-vehicleList.append(Vehicle(39625, "truck", 5, "Toyota","Tundra", 14))
-vehicleList.append(Vehicle(39625, "truck", 6, "Toyota","Tundra", 14))
-vehicleList.append(Vehicle(15995, "car", 5, "Mazda","3" , 29))
-vehicleList.append(Vehicle(32888, "car", 5, "Mazda","6", 24))
-vehicleList.append(Vehicle(38888, "suv", 5, "Mazda","CX-9", 21))
-vehicleList.append(Vehicle(29845, "suv", 5, "Mazda","cx-5" , 24))
-vehicleList.append(Vehicle(46595, "car", 2, "Mazda","MX-5 RF", 26))
-vehicleList.append(Vehicle(33103, "suv", 4, "Jeep","Wrangler", 23))
-vehicleList.append(Vehicle(31305, "suv", 5, "Jeep","Cherokee" , 24))
-vehicleList.append(Vehicle(27297, "suv", 5, "Jeep","Compass" , 17))
-vehicleList.append(Vehicle(37862, "suv", 8, "Jeep","Grand Cherokee" , 21))
-vehicleList.append(Vehicle(20745, "suv", 5, "Jeep","Renegade", 20))
-vehicleList.append(Vehicle(55985, "truck", 5, "Jeep","Gladiator", 16))
-vehicleList.append(Vehicle(53400, "car", 5 , "Tesla","Model 3", 999))
-vehicleList.append(Vehicle(124600, "car", 7 , "Tesla","Model S", 999))
-vehicleList.append(Vehicle(127700, "suv", 6 , "Tesla","Model X", 999))
-vehicleList.append(Vehicle(257000, "car", 4 , "Tesla","Roadster 2", 999))
-#Kenny Cars
-vehicleList.append(Vehicle(63100, "car",5,"Mercedes","E 300 4MATIC Sedan", 29))
-vehicleList.append(Vehicle(47300, "suv",5,"Mercedes","GLC 300 4MATIC SUV", 27))
-vehicleList.append(Vehicle(47400, "suv",5,"Mercedes","C 300 4MATIC Wagon", 27))
-vehicleList.append(Vehicle(60200, "suv",5,"Mercedes","GLC 350e 4MATIC", 74))
-vehicleList.append(Vehicle(60500, "car",2,"Mercedes","SLC 300 Roadster", 27))
-vehicleList.append(Vehicle(42900, "suv",9,"Mercedes","Sprinter 4x4", 17))
-vehicleList.append(Vehicle(102750, "car",4,"Lexus","LC 500", 16))
-vehicleList.append(Vehicle(55350, "suv",5,"Lexus","RX 350", 19))
-vehicleList.append(Vehicle(64500, "suv",5,"Lexus","RX 450H", 31))
-vehicleList.append(Vehicle(66250, "suv",7,"Lexus","RX 350L", 25))
-vehicleList.append(Vehicle(134200, "car",5,"Lexus","LS 500H", 31))
-vehicleList.append(Vehicle(72649, "truck",5,"Ford","F-150 Raptor", 18))
-vehicleList.append(Vehicle(44099, "truck",5,"Ford","Super Duty F-250 XLT", 15))
-vehicleList.append(Vehicle(72649, "truck",6,"Ford","F-150 Raptor", 18))
-vehicleList.append(Vehicle(44099, "truck",6,"Ford","Super Duty F-250 XLT", 15))
-vehicleList.append(Vehicle(394330, "car",5,"Ford","Taurus SEL", 26))
-vehicleList.append(Vehicle(17168, "car",5,"Ford","SE HATCH", 39))
-vehicleList.append(Vehicle(76049, "car",8,"Ford","Expedition Limited MAX", 21))
-vehicleList.append(Vehicle(36900, "suv",5,"Audi","Q2", 37))
-vehicleList.append(Vehicle(44536, "car",5,"Audi","A3", 33))
-vehicleList.append(Vehicle(93206, "car",5,"Audi","RS 5 Coupé", 27))
-vehicleList.append(Vehicle(48003, "car",5,"Audi","A4 Avant", 27))
-vehicleList.append(Vehicle(68537, "car",5,"Audi","S4 Avant", 30))
-#Tayler Verhaegen(Nissan, KIA, Volkswagen, Cadillac)
-vehicleList.append(Vehicle(36498, "truck",5,"Nissan","Titan", 15))
-vehicleList.append(Vehicle(33198, "suv",7,"Nissan","Pathfinder", 20))
-vehicleList.append(Vehicle(27998, "car",5,"Nissan","Altima", 27))
-vehicleList.append(Vehicle(26798, "suv",5,"Nissan","Rouge", 33))
-vehicleList.append(Vehicle(24498, "truck",4,"Nissan","Frontier", 17))
-vehicleList.append(Vehicle(20095, "suv",5,"KIA","Soul", 26))
-vehicleList.append(Vehicle(14795, "car",5,"KIA","Rio", 29))
-vehicleList.append(Vehicle(22495, "car",5,"KIA","Forte", 31))
-vehicleList.append(Vehicle(39995, "car",5,"KIA","Stinger", 22))
-vehicleList.append(Vehicle(28495, "suv",7,"KIA","Sedona", 18))
-vehicleList.append(Vehicle(24475, "car",4,"Volkswagen","Bettle", 43))
-vehicleList.append(Vehicle(22500, "car",5,"Volkswagen","Golf", 30))
-vehicleList.append(Vehicle(32995, "car",5,"Volkswagen","Passat", 45))
-vehicleList.append(Vehicle(29225, "suv",5,"Volkswagen","Tiguan", 38))
-vehicleList.append(Vehicle(47995, "car",5,"Volkswagen","Arteon", 39))
-vehicleList.append(Vehicle(87595, "suv",8,"Cadillac","Escalade", 14))
-vehicleList.append(Vehicle(44895, "suv",5,"Cadillac","XT5", 19))
-vehicleList.append(Vehicle(86870, "car",5,"Cadillac","CT6 Plug In", 62))
-vehicleList.append(Vehicle(46995, "car",5,"Cadillac","CTS", 14))
-vehicleList.append(Vehicle(68645, "car",5,"Cadillac","ATS", 22))
-#Bonus cars
-vehicleList.append(Vehicle(1150000, "car", 2, "Mclaren","P1", 34))
-vehicleList.append(Vehicle(232000, "suv", 5, "Lamborghini","Uras", 14))
-vehicleList.append(Vehicle(274390, "car", 2, "Lamborghini","Huracan", 12))
-vehicleList.append(Vehicle(443804, "car",2, "Lamborghini","Aventador", 11))
-vehicleList.append(Vehicle(515000, "truck", 4, "Mercedes","G63 AMG", 13))
-vehicleList.append(Vehicle(1499, "car", 1, "John Deere","Ride-along Mower", 4))
-vehicleList.append(Vehicle(1, "car", 1, "Cardboard","Box Small", 999))
-vehicleList.append(Vehicle(10, "car", 4, "Cardboard"," Box Large", 999))
-vehicleList.append(Vehicle(5, "car", 2, "Cardboard","Box Medium", 999))
+    # Database of Cars
+    # Hans Fuhrmann Cars
+    vehicleList.append(Vehicle(39490, "car", 5, "Dodge", "Challenger", 19))
+    vehicleList.append(Vehicle(43095, "car", 5, "Dodge", "Charger", 20))
+    vehicleList.append(Vehicle(41345, "suv", 7, "Dodge", "Durango", 22))
+    vehicleList.append(Vehicle(57770, "truck", 5, "Ram", "3500", 15))
+    vehicleList.append(Vehicle(36140, "truck", 5, "Ram", "1500", 15))
+    vehicleList.append(Vehicle(57770, "truck", 6, "Ram", "3500", 15))
+    vehicleList.append(Vehicle(36140, "truck", 6, "Ram", "1500", 15))
+    vehicleList.append(Vehicle(131800, "car", 5, "BMW", "M6 Gran Coupe", 17))
+    vehicleList.append(Vehicle(59765, "suv", 4, "BMW", "i3", 89))
+    vehicleList.append(Vehicle(56800, "car", 5, "BMW", "3 series sedan", 26))
+    vehicleList.append(Vehicle(86000, "suv", 7, "BMW", "X5", 22))
+    vehicleList.append(Vehicle(173465, "car", 4, "BMW", "i8", 40))
+    vehicleList.append(Vehicle(139700, "suv", 5, "Porsche", "Cayenne Turbo", 17))
+    vehicleList.append(Vehicle(63700, "car", 2, "Porsche", "718 Cayman", 24))
+    vehicleList.append(Vehicle(334000, "car", 2, "Porsche", "911 GT2 RS", 24))
+    vehicleList.append(Vehicle(116800, "car", 4, "Porsche", "Panemera 4s", 24))
+    vehicleList.append(Vehicle(150300, "car", 4, "Porsche", "Taycan", 310))
+    vehicleList.append(Vehicle(10095, "car", 4, "Chevy", "Spark", 34))
+    vehicleList.append(Vehicle(55795, "car", 4, "Chevy", "Camaro", 24))
+    vehicleList.append(Vehicle(65180, "suv", 9, "Chevy", "Suburban", 18))
+    vehicleList.append(Vehicle(52690, "truck", 6, "Chevy", "Silverado", 20))
+    vehicleList.append(Vehicle(52690, "truck", 5, "Chevy", "Silverado", 20))
+    vehicleList.append(Vehicle(40685, "truck", 5, "Chevy", "Colorado", 23))
+    # Jae Ung Kim(Volvo, Buick, Subaru, Honda)
+    vehicleList.append(Vehicle(59750, "suv", 5, "Volvo", "XC90", 21))
+    vehicleList.append(Vehicle(46800, "suv", 5, "Volvo", "XC60", 20))
+    vehicleList.append(Vehicle(40300, "suv", 5, "Volvo", "XC40", 23))
+    vehicleList.append(Vehicle(59950, "car", 5, "Volvo", "S90", 22))
+    vehicleList.append(Vehicle(166500, "truck", 5, "Volvo", "VNR 640", 15))
+    vehicleList.append(Vehicle(50445, "car", 5, "Buick", "Lacrosse", 25))
+    vehicleList.append(Vehicle(26500, "suv", 5, "Buick", "Encore", 26))
+    vehicleList.append(Vehicle(38400, "suv", 5, "Buick", "Envision", 29))
+    vehicleList.append(Vehicle(62200, "suv", 5, "Buick", "Enclave", 27))
+    vehicleList.append(Vehicle(44145, "car", 5, "Buick", "Regal GS", 19))
+    vehicleList.append(Vehicle(27995, "suv", 5, "Subaru", "Forester", 25))
+    vehicleList.append(Vehicle(19995, "car", 5, "Subaru", "Impreza", 27))
+    vehicleList.append(Vehicle(24995, "car", 5, "Subaru", "Legacy", 25))
+    vehicleList.append(Vehicle(29295, "car", 5, "Subaru", "Outback", 25))
+    vehicleList.append(Vehicle(27995, "car", 4, "Subaru", "BRZ", 21))
+    vehicleList.append(Vehicle(21190, "car", 5, "Honda", "Civic Coupe", 26))
+    vehicleList.append(Vehicle(33390, "car", 5, "Honda", "Accord Hybrid", 49))
+    vehicleList.append(Vehicle(27990, "car", 5, "Honda", "Insight Hybrid", 55))
+    vehicleList.append(Vehicle(40100, "car", 6, "Honda", "Clarity Plugin Hybrid", 42))
+    vehicleList.append(Vehicle(40790, "truck", 5, "Honda", "Ridgeline", 26))
+    # Pierre Frigon(Toyota, Mazda, Jeep, Tesla)
+    vehicleList.append(Vehicle(16595, "car", 5, "Toyota", "Yaris", 30))
+    vehicleList.append(Vehicle(27650, "car", 5, "Toyota", "Prius", 53))
+    vehicleList.append(Vehicle(27990, "suv", 5, "Toyota", "RAV4", 25))
+    vehicleList.append(Vehicle(37300, "suv", 8, "Toyota", "Highlander", 20))
+    vehicleList.append(Vehicle(39625, "truck", 5, "Toyota", "Tundra", 14))
+    vehicleList.append(Vehicle(39625, "truck", 6, "Toyota", "Tundra", 14))
+    vehicleList.append(Vehicle(15995, "car", 5, "Mazda", "3", 29))
+    vehicleList.append(Vehicle(32888, "car", 5, "Mazda", "6", 24))
+    vehicleList.append(Vehicle(38888, "suv", 5, "Mazda", "CX-9", 21))
+    vehicleList.append(Vehicle(29845, "suv", 5, "Mazda", "cx-5", 24))
+    vehicleList.append(Vehicle(46595, "car", 2, "Mazda", "MX-5 RF", 26))
+    vehicleList.append(Vehicle(33103, "suv", 4, "Jeep", "Wrangler", 23))
+    vehicleList.append(Vehicle(31305, "suv", 5, "Jeep", "Cherokee", 24))
+    vehicleList.append(Vehicle(27297, "suv", 5, "Jeep", "Compass", 17))
+    vehicleList.append(Vehicle(37862, "suv", 8, "Jeep", "Grand Cherokee", 21))
+    vehicleList.append(Vehicle(20745, "suv", 5, "Jeep", "Renegade", 20))
+    vehicleList.append(Vehicle(55985, "truck", 5, "Jeep", "Gladiator", 16))
+    vehicleList.append(Vehicle(53400, "car", 5, "Tesla", "Model 3", 999))
+    vehicleList.append(Vehicle(124600, "car", 7, "Tesla", "Model S", 999))
+    vehicleList.append(Vehicle(127700, "suv", 6, "Tesla", "Model X", 999))
+    vehicleList.append(Vehicle(257000, "car", 4, "Tesla", "Roadster 2", 999))
+    # Kenny Cars
+    vehicleList.append(Vehicle(63100, "car", 5, "Mercedes", "E 300 4MATIC Sedan", 29))
+    vehicleList.append(Vehicle(47300, "suv", 5, "Mercedes", "GLC 300 4MATIC SUV", 27))
+    vehicleList.append(Vehicle(47400, "suv", 5, "Mercedes", "C 300 4MATIC Wagon", 27))
+    vehicleList.append(Vehicle(60200, "suv", 5, "Mercedes", "GLC 350e 4MATIC", 74))
+    vehicleList.append(Vehicle(60500, "car", 2, "Mercedes", "SLC 300 Roadster", 27))
+    vehicleList.append(Vehicle(42900, "suv", 9, "Mercedes", "Sprinter 4x4", 17))
+    vehicleList.append(Vehicle(102750, "car", 4, "Lexus", "LC 500", 16))
+    vehicleList.append(Vehicle(55350, "suv", 5, "Lexus", "RX 350", 19))
+    vehicleList.append(Vehicle(64500, "suv", 5, "Lexus", "RX 450H", 31))
+    vehicleList.append(Vehicle(66250, "suv", 7, "Lexus", "RX 350L", 25))
+    vehicleList.append(Vehicle(134200, "car", 5, "Lexus", "LS 500H", 31))
+    vehicleList.append(Vehicle(72649, "truck", 5, "Ford", "F-150 Raptor", 18))
+    vehicleList.append(Vehicle(44099, "truck", 5, "Ford", "Super Duty F-250 XLT", 15))
+    vehicleList.append(Vehicle(72649, "truck", 6, "Ford", "F-150 Raptor", 18))
+    vehicleList.append(Vehicle(44099, "truck", 6, "Ford", "Super Duty F-250 XLT", 15))
+    vehicleList.append(Vehicle(394330, "car", 5, "Ford", "Taurus SEL", 26))
+    vehicleList.append(Vehicle(17168, "car", 5, "Ford", "SE HATCH", 39))
+    vehicleList.append(Vehicle(76049, "car", 8, "Ford", "Expedition Limited MAX", 21))
+    vehicleList.append(Vehicle(36900, "suv", 5, "Audi", "Q2", 37))
+    vehicleList.append(Vehicle(44536, "car", 5, "Audi", "A3", 33))
+    vehicleList.append(Vehicle(93206, "car", 5, "Audi", "RS 5 Coupé", 27))
+    vehicleList.append(Vehicle(48003, "car", 5, "Audi", "A4 Avant", 27))
+    vehicleList.append(Vehicle(68537, "car", 5, "Audi", "S4 Avant", 30))
+    # Tayler Verhaegen(Nissan, KIA, Volkswagen, Cadillac)
+    vehicleList.append(Vehicle(36498, "truck", 5, "Nissan", "Titan", 15))
+    vehicleList.append(Vehicle(33198, "suv", 7, "Nissan", "Pathfinder", 20))
+    vehicleList.append(Vehicle(27998, "car", 5, "Nissan", "Altima", 27))
+    vehicleList.append(Vehicle(26798, "suv", 5, "Nissan", "Rouge", 33))
+    vehicleList.append(Vehicle(24498, "truck", 4, "Nissan", "Frontier", 17))
+    vehicleList.append(Vehicle(20095, "suv", 5, "KIA", "Soul", 26))
+    vehicleList.append(Vehicle(14795, "car", 5, "KIA", "Rio", 29))
+    vehicleList.append(Vehicle(22495, "car", 5, "KIA", "Forte", 31))
+    vehicleList.append(Vehicle(39995, "car", 5, "KIA", "Stinger", 22))
+    vehicleList.append(Vehicle(28495, "suv", 7, "KIA", "Sedona", 18))
+    vehicleList.append(Vehicle(24475, "car", 4, "Volkswagen", "Bettle", 43))
+    vehicleList.append(Vehicle(22500, "car", 5, "Volkswagen", "Golf", 30))
+    vehicleList.append(Vehicle(32995, "car", 5, "Volkswagen", "Passat", 45))
+    vehicleList.append(Vehicle(29225, "suv", 5, "Volkswagen", "Tiguan", 38))
+    vehicleList.append(Vehicle(47995, "car", 5, "Volkswagen", "Arteon", 39))
+    vehicleList.append(Vehicle(87595, "suv", 8, "Cadillac", "Escalade", 14))
+    vehicleList.append(Vehicle(44895, "suv", 5, "Cadillac", "XT5", 19))
+    vehicleList.append(Vehicle(86870, "car", 5, "Cadillac", "CT6 Plug In", 62))
+    vehicleList.append(Vehicle(46995, "car", 5, "Cadillac", "CTS", 14))
+    vehicleList.append(Vehicle(68645, "car", 5, "Cadillac", "ATS", 22))
+    # Bonus cars
+    vehicleList.append(Vehicle(1150000, "car", 2, "Mclaren", "P1", 34))
+    vehicleList.append(Vehicle(232000, "suv", 5, "Lamborghini", "Uras", 14))
+    vehicleList.append(Vehicle(274390, "car", 2, "Lamborghini", "Huracan", 12))
+    vehicleList.append(Vehicle(443804, "car", 2, "Lamborghini", "Aventador", 11))
+    vehicleList.append(Vehicle(515000, "truck", 4, "Mercedes", "G63 AMG", 13))
+    vehicleList.append(Vehicle(1499, "car", 1, "John Deere", "Ride-along Mower", 4))
+    vehicleList.append(Vehicle(1, "car", 1, "Cardboard", "Box Small", 999))
+    vehicleList.append(Vehicle(10, "car", 4, "Cardboard", " Box Large", 999))
+    vehicleList.append(Vehicle(5, "car", 2, "Cardboard", "Box Medium", 999))
 
-#End of Database
-
+    # End of Database
+    return vehicleList
 #Variables for saving user information and stopping condition for end of program
+vehicleList = getVehicles()
 
-uservehicle = Vehicle(9999999, "", 0, "","", 999)
 endcondition = False
 #Text input and responses for text-matching
 
@@ -253,6 +255,17 @@ def check_type(sentance):
             print(random.choice(type_r))
             type = input("Car, truck, or SUV:")
             uservehicle.settype(type.lower())
+def runagain():
+    ending_r = ("My pleasure " + username + ", have a great day!", "Well have a wonderful day " + username,"I'm glad I could help, bye for now!")
+    sentance = input("Would you like to search for another vehicle?")
+    words = sentance.split()
+    for word in words:
+        if word.lower() in greetings_i:
+            print("\n")
+            return True
+
+        print(random.choice(ending_r))
+        sys.exit()
 def check_ending(sentance, username,vehicle):
 
     ending_r = ("My pleasure " + username + ", have a great day!", "Well have a wonderful day " + username,"I'm glad I could help, bye for now!")
@@ -260,13 +273,15 @@ def check_ending(sentance, username,vehicle):
     for word in words:
         if word.lower() in ending_i:
             finance = input("Would you like to know lease option for this vehicle?")
-            years = input("In how many years would you like to pay off your "+vehicle.name+"?")
-            months = int(years)*26
+
             words = finance.split()
             for word in words:
                 if word.lower() in ending_i:
+                    years = input("In how many years would you like to pay off your " + vehicle.name + "?")
+                    months = int(years) * 26
                     print("The rate would be $"+str(round(vehicle.price/months,2))+" bi-weekly for the next "+str(years)+" year/years")
-            print (random.choice(ending_r))
+
+
             return True
     return False
 
@@ -282,32 +297,42 @@ check_name(username)
 sentance = input("How is your day going?\n")
 check_bad(sentance)
 check_good(sentance)
-print("What are some important aspects you want in \nyour vehicle?")
-sentance = input("Currently we support the following features: \n -Fuel Efficiency \n -Seating \n -Price \n -Type of vehicle\n -Brand\n")
-check_seats(sentance)
-check_brand(sentance)
-check_type(sentance)
-check_fuel(sentance)
-check_price(sentance)
-if(int(uservehicle.price)<9999999):
-    vehicleList = [vehicle for vehicle in vehicleList if vehicle.price <= int(uservehicle.price)]
-if(uservehicle.type!=""):
-    vehicleList = [vehicle for vehicle in vehicleList if vehicle.type == uservehicle.type]
-if(uservehicle.brand!=""):
-    vehicleList = [vehicle for vehicle in vehicleList if vehicle.brand.lower() == uservehicle.brand.lower()]
-if(int(uservehicle.fueleff)<999):
-    vehicleList = [vehicle for vehicle in vehicleList if vehicle.fueleff >= int(uservehicle.fueleff)]
-if(int(uservehicle.seats)>0):
-    vehicleList = [vehicle for vehicle in vehicleList if vehicle.seats == int(uservehicle.seats)]
-print("\nI have found "+str(len(vehicleList))+" vehicles that match your criteria!")
-while(endcondition==False):
-    print("\n")
-    if (len(vehicleList) == 0):
-        print("I'm sorry, none of our cars match that criteria. Goodbye")
-        break
-    vehicle = getcar(vehicleList)
-    sentance =input("Are you happy with this vehicle?")
-    endcondition = check_ending(sentance, username,vehicle)
-    if(len(vehicleList)<1):
-        print("I'm sorry, that is all the cars that match the given criteria. Goodbye")
-        break
+endconditionmain = False
+while(endconditionmain==False):
+    uservehicle = Vehicle(9999999, "", 0, "", "", 999)
+    endcondition = False
+    vehicleList = getVehicles()
+    print("What are some important aspects you want in \nyour vehicle?")
+    sentance = input(
+        "Currently we support the following features: \n -Fuel Efficiency \n -Seating \n -Price \n -Type of vehicle\n -Brand\n")
+    check_seats(sentance)
+    check_brand(sentance)
+    check_type(sentance)
+    check_fuel(sentance)
+    check_price(sentance)
+    if (int(uservehicle.price) < 9999999):
+        vehicleList = [vehicle for vehicle in vehicleList if vehicle.price <= int(uservehicle.price)]
+    if (uservehicle.type != ""):
+        vehicleList = [vehicle for vehicle in vehicleList if vehicle.type == uservehicle.type]
+    if (uservehicle.brand != ""):
+        vehicleList = [vehicle for vehicle in vehicleList if vehicle.brand.lower() == uservehicle.brand.lower()]
+    if (int(uservehicle.fueleff) < 999):
+        vehicleList = [vehicle for vehicle in vehicleList if vehicle.fueleff >= int(uservehicle.fueleff)]
+    if (int(uservehicle.seats) > 0):
+        vehicleList = [vehicle for vehicle in vehicleList if vehicle.seats == int(uservehicle.seats)]
+    print("\nI have found " + str(len(vehicleList)) + " vehicles that match your criteria!")
+    while (endcondition == False):
+        print("\n")
+        if (len(vehicleList) == 0):
+            print("I'm sorry, none of our cars match that criteria")
+            runagain()
+
+            break
+        vehicle = getcar(vehicleList)
+        sentance = input("Are you happy with this vehicle?")
+        endcondition = check_ending(sentance, username, vehicle)
+        if (len(vehicleList) < 1):
+            print("I'm sorry, that is all the cars that match the given criteria.")
+            runagain()
+            break
+        runagain()
