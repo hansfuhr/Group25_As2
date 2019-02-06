@@ -192,7 +192,9 @@ from random import randrange
 #Method that takes random car from list. Once we have narrowed down the list, we can use this to show the user a possible car match
 def getcar(list):
     index = randrange(len(list))
-    tostring(list.pop(index))
+    vehicle = list.pop(index)
+    tostring(vehicle)
+    return vehicle
 def check_greeting(sentance):
     words = sentance.split()
     for word in words:
@@ -251,17 +253,19 @@ def check_type(sentance):
             print(random.choice(type_r))
             type = input("Car, truck, or SUV:")
             uservehicle.settype(type.lower())
-def check_ending(sentance, username):
+def check_ending(sentance, username,vehicle):
 
     ending_r = ("My pleasure " + username + ", have a great day!", "Well have a wonderful day " + username,"I'm glad I could help, bye for now!")
     words = sentance.split()
     for word in words:
         if word.lower() in ending_i:
             finance = input("Would you like to know lease option for this vehicle?")
+            years = input("In how many years would you like to pay off your "+vehicle.name+"?")
+            months = int(years)*26
             words = finance.split()
             for word in words:
                 if word.lower() in ending_i:
-                    print("The bi-weekly rate would be $10 for the next 2 years")
+                    print("The rate would be $"+str(round(vehicle.price/months,2))+" bi-weekly for the next "+str(years)+" year/years")
             print (random.choice(ending_r))
             return True
     return False
@@ -298,9 +302,12 @@ if(int(uservehicle.seats)>0):
 print("\nI have found "+str(len(vehicleList))+" vehicles that match your criteria!")
 while(endcondition==False):
     print("\n")
-    getcar(vehicleList)
+    if (len(vehicleList) == 0):
+        print("I'm sorry, none of our cars match that criteria. Goodbye")
+        break
+    vehicle = getcar(vehicleList)
     sentance =input("Are you happy with this vehicle?")
-    endcondition = check_ending(sentance, username)
+    endcondition = check_ending(sentance, username,vehicle)
     if(len(vehicleList)<1):
         print("I'm sorry, that is all the cars that match the given criteria. Goodbye")
         break
