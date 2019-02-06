@@ -34,6 +34,8 @@ vehicleList.append(Vehicle(43095, "car",5,"Dodge","Charger", 20))
 vehicleList.append(Vehicle(41345, "suv",7,"Dodge","Durango", 22))
 vehicleList.append(Vehicle(57770, "truck",5,"Ram","3500", 15))
 vehicleList.append(Vehicle(36140, "truck",5,"Ram","1500", 15))
+vehicleList.append(Vehicle(57770, "truck",6,"Ram","3500", 15))
+vehicleList.append(Vehicle(36140, "truck",6,"Ram","1500", 15))
 vehicleList.append(Vehicle(131800, "car",5,"BMW","M6 Gran Coupe", 17))
 vehicleList.append(Vehicle(59765, "suv",4,"BMW","i3", 89))
 vehicleList.append(Vehicle(56800, "car",5,"BMW","3 series sedan", 26))
@@ -48,6 +50,7 @@ vehicleList.append(Vehicle(10095, "car",4,"Chevy","Spark", 34))
 vehicleList.append(Vehicle(55795, "car",4,"Chevy","Camaro", 24))
 vehicleList.append(Vehicle(65180, "suv",9,"Chevy","Suburban", 18))
 vehicleList.append(Vehicle(52690, "truck",6,"Chevy","Silverado", 20))
+vehicleList.append(Vehicle(52690, "truck",5,"Chevy","Silverado", 20))
 vehicleList.append(Vehicle(40685, "truck",5,"Chevy","Colorado", 23))
 #Jae Ung Kim(Volvo, Buick, Subaru, Honda)
 vehicleList.append(Vehicle(59750, "suv",5,"Volvo","XC90", 21))
@@ -76,6 +79,7 @@ vehicleList.append(Vehicle(27650, "car", 5, "Toyota","Prius" , 53))
 vehicleList.append(Vehicle(27990, "suv", 5, "Toyota","RAV4", 25))
 vehicleList.append(Vehicle(37300, "suv", 8, "Toyota","Highlander", 20))
 vehicleList.append(Vehicle(39625, "truck", 5, "Toyota","Tundra", 14))
+vehicleList.append(Vehicle(39625, "truck", 6, "Toyota","Tundra", 14))
 vehicleList.append(Vehicle(15995, "car", 5, "Mazda","3" , 29))
 vehicleList.append(Vehicle(32888, "car", 5, "Mazda","6", 24))
 vehicleList.append(Vehicle(38888, "suv", 5, "Mazda","CX-9", 21))
@@ -104,6 +108,8 @@ vehicleList.append(Vehicle(64500, "suv",5,"Lexus","RX 450H", 31))
 vehicleList.append(Vehicle(66250, "suv",7,"Lexus","RX 350L", 25))
 vehicleList.append(Vehicle(134200, "car",5,"Lexus","LS 500H", 31))
 vehicleList.append(Vehicle(72649, "truck",5,"Ford","F-150 Raptor", 18))
+vehicleList.append(Vehicle(44099, "truck",5,"Ford","Super Duty F-250 XLT", 15))
+vehicleList.append(Vehicle(72649, "truck",6,"Ford","F-150 Raptor", 18))
 vehicleList.append(Vehicle(44099, "truck",6,"Ford","Super Duty F-250 XLT", 15))
 vehicleList.append(Vehicle(394330, "car",5,"Ford","Taurus SEL", 26))
 vehicleList.append(Vehicle(17168, "car",5,"Ford","SE HATCH", 39))
@@ -135,8 +141,10 @@ vehicleList.append(Vehicle(86870, "car",5,"Cadillac","CT6 Plug In", 62))
 vehicleList.append(Vehicle(46995, "car",5,"Cadillac","CTS", 14))
 vehicleList.append(Vehicle(68645, "car",5,"Cadillac","ATS", 22))
 #Bonus cars
+vehicleList.append(Vehicle(1150000, "car", 2, "Mclaren","P1", 34))
 vehicleList.append(Vehicle(232000, "suv", 5, "Lamborghini","Uras", 14))
-vehicleList.append(Vehicle(443804, "car", 5, "Lamborghini","Aventador", 11))
+vehicleList.append(Vehicle(274390, "car", 2, "Lamborghini","Huracan", 12))
+vehicleList.append(Vehicle(443804, "car",2, "Lamborghini","Aventador", 11))
 vehicleList.append(Vehicle(515000, "truck", 4, "Mercedes","G63 AMG", 13))
 vehicleList.append(Vehicle(1499, "car", 1, "John Deere","Ride-along Mower", 4))
 vehicleList.append(Vehicle(1, "car", 1, "Cardboard","Box Small", 999))
@@ -244,10 +252,16 @@ def check_type(sentance):
             type = input("Car, truck, or SUV:")
             uservehicle.settype(type.lower())
 def check_ending(sentance, username):
+
     ending_r = ("My pleasure " + username + ", have a great day!", "Well have a wonderful day " + username,"I'm glad I could help, bye for now!")
     words = sentance.split()
     for word in words:
         if word.lower() in ending_i:
+            finance = input("Would you like to know lease option for this vehicle?")
+            words = finance.split()
+            for word in words:
+                if word.lower() in ending_i:
+                    print("The bi-weekly rate would be $10 for the next 2 years")
             print (random.choice(ending_r))
             return True
     return False
@@ -276,7 +290,7 @@ if(int(uservehicle.price)<9999999):
 if(uservehicle.type!=""):
     vehicleList = [vehicle for vehicle in vehicleList if vehicle.type == uservehicle.type]
 if(uservehicle.brand!=""):
-    vehicleList = [vehicle for vehicle in vehicleList if vehicle.brand == uservehicle.brand]
+    vehicleList = [vehicle for vehicle in vehicleList if vehicle.brand.lower() == uservehicle.brand.lower()]
 if(int(uservehicle.fueleff)<999):
     vehicleList = [vehicle for vehicle in vehicleList if vehicle.fueleff >= int(uservehicle.fueleff)]
 if(int(uservehicle.seats)>0):
@@ -287,3 +301,6 @@ while(endcondition==False):
     getcar(vehicleList)
     sentance =input("Are you happy with this vehicle?")
     endcondition = check_ending(sentance, username)
+    if(len(vehicleList)<1):
+        print("I'm sorry, that is all the cars that match the given criteria. Goodbye")
+        break
