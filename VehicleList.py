@@ -149,9 +149,9 @@ def getVehicles():
     vehicleList.append(Vehicle(443804, "car", 2, "Lamborghini", "Aventador", 11))
     vehicleList.append(Vehicle(515000, "truck", 4, "Mercedes", "G63 AMG", 13))
     vehicleList.append(Vehicle(1499, "car", 1, "John Deere", "Ride-along Mower", 4))
-    vehicleList.append(Vehicle(1, "car", 1, "Cardboard", "Box Small", 999))
-    vehicleList.append(Vehicle(10, "car", 4, "Cardboard", " Box Large", 999))
-    vehicleList.append(Vehicle(5, "car", 2, "Cardboard", "Box Medium", 999))
+    vehicleList.append(Vehicle(5, "car", 2, "Cardboard", "Box", 999))
+    
+
 
     # End of Database
     return vehicleList
@@ -165,7 +165,7 @@ greetings_i = ("yes", "yup","car","truck","suv","sure","ok","okay","perhaps")
 greetings_r = ("Excellent, let's start with your name", "That's great to hear, what can I call you?", "Before I help you, could you please enter your name?")
 greetings2_i=("no","nah","thanks","good")
 greetings2_r=("Well have an excellent day!","I'm sorry to hear that, goodbye", "That's unfortunate",":(")
-good_i = ("excellent", "good", "great", "alright", "fine", "well")
+good_i = ("excellent", "good", "great", "alright", "fine", "well","aight","dec")
 good_r = ("That's awesome, let's get into some car details then.", "I love the enthusiasm, let's get you behind the wheel of a new car!", ":)")
 bad_i=("no","nah","bad","not","laid","been","hanging","sad","mad","depressed","lonely","down")
 bad_r=("That's awful, maybe a car can cheer you up!","That's depressing, let's get you a car and get you outta here", "Aw, well I'm sure a car will cheer you up!",":(")
@@ -325,14 +325,14 @@ while(endconditionmain==False):
         print("\n")
         if (len(vehicleList) == 0):
             print("I'm sorry, none of our cars match that criteria")
-            runagain()
+
 
             break
+
         vehicle = getcar(vehicleList)
         sentance = input("Are you happy with this vehicle?")
         endcondition = check_ending(sentance, username, vehicle)
         if (len(vehicleList) < 1):
             print("I'm sorry, that is all the cars that match the given criteria.")
-            runagain()
             break
-        runagain()
+    runagain()
