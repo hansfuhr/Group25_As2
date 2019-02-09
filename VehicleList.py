@@ -161,11 +161,11 @@ vehicleList = getVehicles()
 endcondition = False
 #Text input and responses for text-matching
 
-greetings_i = ("yes", "yup","car","truck","suv","sure","ok","okay","perhaps")
+greetings_i = ("yes", "yup","car","truck","suv","sure","ok","okay","perhaps","great")
 greetings_r = ("Excellent, let's start with your name", "That's great to hear, what can I call you?", "Before I help you, could you please enter your name?")
-greetings2_i=("no","nah","thanks","good")
+greetings2_i=("no","nah","thanks","good", "okay", "ok","great")
 greetings2_r=("Well have an excellent day!","I'm sorry to hear that, goodbye", "That's unfortunate",":(")
-good_i = ("excellent", "good", "great", "alright", "fine", "well","aight","dec")
+good_i = ("excellent", "good", "great", "alright", "fine", "well","aight","dec", "amazing")
 good_r = ("That's awesome, let's get into some car details then.", "I love the enthusiasm, let's get you behind the wheel of a new car!", ":)")
 bad_i=("no","nah","bad","not","laid","been","hanging","sad","mad","depressed","lonely","down")
 bad_r=("That's awful, maybe a car can cheer you up!","That's depressing, let's get you a car and get you outta here", "Aw, well I'm sure a car will cheer you up!",":(")
@@ -273,6 +273,7 @@ def check_ending(sentance, username,vehicle):
     for word in words:
         if word.lower() in ending_i:
             finance = input("Would you like to know lease option for this vehicle?")
+            # entering okay does'nt work
 
             words = finance.split()
             for word in words:
@@ -330,7 +331,7 @@ while(endconditionmain==False):
             break
 
         vehicle = getcar(vehicleList)
-        sentance = input("Are you happy with this vehicle?")
+        sentance = input("Are you happy with this vehicle?" )
         endcondition = check_ending(sentance, username, vehicle)
         if (len(vehicleList) < 1):
             print("I'm sorry, that is all the cars that match the given criteria.")
