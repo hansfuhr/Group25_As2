@@ -175,9 +175,9 @@ greetings2_r = ("Well have an excellent day!", "I'm sorry to hear that, goodbye"
 good_i = ("excellent", "good", "great", "alright", "fine", "well", "aight", "dec", "amazing")
 good_r = ("That's awesome, let's get into some car details then.",
           "I love the enthusiasm, let's get you behind the wheel of a new car!", ":)")
-bad_i = ("no", "nah", "bad", "not", "laid", "been", "hanging", "sad", "mad", "depressed", "lonely", "down")
+bad_i = ("no", "nah", "bad", "not", "laid", "been", "hanging", "sad", "mad", "depressed", "lonely", "down", "sucky")
 bad_r = ("That's awful, maybe a car can cheer you up!", "That's depressing, let's get you a car and get you outta here",
-         "Aw, well I'm sure a car will cheer you up!", ":(")
+         "Aw, well I'm sure a car will cheer you up!", ":(", "I love you")
 welcome = (
 "Welcome to Autobot, can I assist you today?", "Hello, my name is Autobot, can I help you find a vehicle today?",
 "Good day! My name is Autobot, can we get you rolling in a new vehicle?")
@@ -381,3 +381,4 @@ while (endconditionmain == False):
             print("I'm sorry, that is all the cars that match the given criteria.")
             break
     runagain()
+
