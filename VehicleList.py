@@ -1,5 +1,6 @@
 import random
 import sys
+import time
 class Vehicle(object):
 
     def __init__(self, price, type, seats, brand, name, fueleff):
@@ -150,7 +151,8 @@ def getVehicles():
     vehicleList.append(Vehicle(515000, "truck", 4, "Mercedes", "G63 AMG", 13))
     vehicleList.append(Vehicle(1499, "car", 1, "John Deere", "Ride-along Mower", 4))
     vehicleList.append(Vehicle(5, "car", 2, "Cardboard", "Box", 999))
-    
+    vehicleList.append(Vehicle(7000, "car", 4, "Toyota", "Celica", 32))
+
 
 
     # End of Database
@@ -180,7 +182,7 @@ type_i = ("type", "function", "type,", "function,")
 type_r = ("Are you looking for a car, truck or suv?", "Are you a car, truck, or suv kind of person?")
 brand_i = ("brand", "brand,", "make", "make,")
 brand_r = ("What brand are you after?", "What brand are you interested in?")
-ending_i = ("yes", "thanks", "good", "yea", "yeah","sure","cool","absolutely")
+ending_i = ("yes", "thanks", "good", "yea", "yeah","sure","cool","absolutely","okay","ok")
 #----Functions for text-finding given a sentance as input
 #ToString method for a vehicle
 def tostring(Vehicle):
@@ -226,6 +228,11 @@ def check_seats(sentance):
         if word.lower() in seats_i:
             print(random.choice(seats_r))
             seats = input("Seats:")
+            time.sleep(1)
+            print(" . ")
+            time.sleep(1)
+            print(" . ")
+            time.sleep(1)
             uservehicle.setseats(seats)
 def check_brand(sentance):
     words = sentance.split()
@@ -233,6 +240,11 @@ def check_brand(sentance):
         if word.lower() in brand_i:
             print(random.choice(brand_r))
             brand = input("Brand:")
+            time.sleep(1)
+            print(" . ")
+            time.sleep(1)
+            print(" . ")
+            time.sleep(1)
             uservehicle.setbrand(brand)
 def check_fuel(sentence):
    words = sentence.split()
@@ -240,6 +252,11 @@ def check_fuel(sentence):
        if word.lower() in fuel_i:
            print(fuel_r)
            fuel_eff = input("Fuel efficiency level(in mpg): ")
+           time.sleep(1)
+           print(" . ")
+           time.sleep(1)
+           print(" . ")
+           time.sleep(1)
            uservehicle.setfueleff(fuel_eff)
 def check_price(sentence):
    words = sentence.split()
@@ -247,6 +264,11 @@ def check_price(sentence):
        if word.lower() in price_i:
            print(random.choice(price_r))
            price = input("Price $:")
+           time.sleep(1)
+           print(" . ")
+           time.sleep(1)
+           print(" . ")
+           time.sleep(1)
            uservehicle.setprice(price)
 def check_type(sentance):
     words = sentance.split()
@@ -254,10 +276,20 @@ def check_type(sentance):
         if word.lower() in type_i:
             print(random.choice(type_r))
             type = input("Car, truck, or SUV:")
+            time.sleep(1)
+            print(" . ")
+            time.sleep(1)
+            print(" . ")
+            time.sleep(1)
             uservehicle.settype(type.lower())
 def runagain():
     ending_r = ("My pleasure " + username + ", have a great day!", "Well have a wonderful day " + username,"I'm glad I could help, bye for now!")
     sentance = input("Would you like to search for another vehicle?")
+    time.sleep(1)
+    print(" . ")
+    time.sleep(1)
+    print(" . ")
+    time.sleep(1)
     words = sentance.split()
     for word in words:
         if word.lower() in greetings_i:
@@ -273,12 +305,22 @@ def check_ending(sentance, username,vehicle):
     for word in words:
         if word.lower() in ending_i:
             finance = input("Would you like to know lease option for this vehicle?")
+            time.sleep(1)
+            print(" . ")
+            time.sleep(1)
+            print(" . ")
+            time.sleep(1)
             # entering okay does'nt work
 
             words = finance.split()
             for word in words:
                 if word.lower() in ending_i:
                     years = input("In how many years would you like to pay off your " + vehicle.name + "?")
+                    time.sleep(1)
+                    print(" . ")
+                    time.sleep(1)
+                    print(" . ")
+                    time.sleep(1)
                     months = int(years) * 26
                     print("The rate would be $"+str(round(vehicle.price/months,2))+" bi-weekly for the next "+str(years)+" year/years")
 
@@ -291,11 +333,26 @@ def check_ending(sentance, username,vehicle):
 print(random.choice(welcome))
 print("We currently have "+str(len(vehicleList))+" vehicles in our inventory.")
 sentance = input()
+time.sleep(1)
+print(" . ")
+time.sleep(1)
+print(" . ")
+time.sleep(1)
 check_greeting(sentance)
 check_greeting2(sentance)
 username = input("Name:")
+time.sleep(1)
+print(" . ")
+time.sleep(1)
+print(" . ")
+time.sleep(1)
 check_name(username)
 sentance = input("How is your day going?\n")
+time.sleep(1)
+print(" . ")
+time.sleep(1)
+print(" . ")
+time.sleep(1)
 check_bad(sentance)
 check_good(sentance)
 endconditionmain = False
@@ -304,12 +361,18 @@ while(endconditionmain==False):
     endcondition = False
     vehicleList = getVehicles()
     print("What are some important aspects you want in \nyour vehicle?")
+
     sentance = input(
         "Currently we support the following features: \n -Fuel Efficiency \n -Seating \n -Price \n -Type of vehicle\n -Brand\n")
+
     check_seats(sentance)
+
     check_brand(sentance)
+
     check_type(sentance)
+
     check_fuel(sentance)
+
     check_price(sentance)
     if (int(uservehicle.price) < 9999999):
         vehicleList = [vehicle for vehicle in vehicleList if vehicle.price <= int(uservehicle.price)]
@@ -321,6 +384,15 @@ while(endconditionmain==False):
         vehicleList = [vehicle for vehicle in vehicleList if vehicle.fueleff >= int(uservehicle.fueleff)]
     if (int(uservehicle.seats) > 0):
         vehicleList = [vehicle for vehicle in vehicleList if vehicle.seats == int(uservehicle.seats)]
+    time.sleep(1)
+    print(" . ")
+    time.sleep(1)
+    print(" . ")
+    time.sleep(1)
+    print(" . ")
+    time.sleep(1)
+    print(" . ")
+    time.sleep(1)
     print("\nI have found " + str(len(vehicleList)) + " vehicles that match your criteria!")
     while (endcondition == False):
         print("\n")
@@ -332,6 +404,11 @@ while(endconditionmain==False):
 
         vehicle = getcar(vehicleList)
         sentance = input("Are you happy with this vehicle?" )
+        time.sleep(1)
+        print(" . ")
+        time.sleep(1)
+        print(" . ")
+        time.sleep(1)
         endcondition = check_ending(sentance, username, vehicle)
         if (len(vehicleList) < 1):
             print("I'm sorry, that is all the cars that match the given criteria.")
