@@ -29,7 +29,7 @@ def getVehicles():
     # List we will use for all cars and then matching criteria
     vehicleList = []
 
-    # Database of Cars
+    # -------------------------------------------------------------Database of Cars----------------------------------------------------------------------------------------
     # Hans Fuhrmann Cars
     vehicleList.append(Vehicle(39490, "car", 5, "Dodge", "Challenger", 19))
     vehicleList.append(Vehicle(43095, "car", 5, "Dodge", "Charger", 20))
@@ -153,13 +153,13 @@ def getVehicles():
     
 
 
-    # End of Database
+    # ------------------------------------------------End of Database-----------------------------------------------------------------------------------
     return vehicleList
 #Variables for saving user information and stopping condition for end of program
 vehicleList = getVehicles()
 
 endcondition = False
-#Text input and responses for text-matching
+#-----------------------------------------------------------Text input and responses for text-matching----------------------------------------------------
 
 greetings_i = ("yes", "yup","car","truck","suv","sure","ok","okay","perhaps","great")
 greetings_r = ("Excellent, let's start with your name", "That's great to hear, what can I call you?", "Before I help you, could you please enter your name?")
@@ -181,7 +181,7 @@ type_r = ("Are you looking for a car, truck or suv?", "Are you a car, truck, or 
 brand_i = ("brand", "brand,", "make", "make,")
 brand_r = ("What brand are you after?", "What brand are you interested in?")
 ending_i = ("yes", "thanks", "good", "yea", "yeah","sure","cool","absolutely")
-#----Functions for text-finding given a sentance as input
+#--------------------------------------------------Functions for text-finding given a sentance as input----------------------------------------------------------
 #ToString method for a vehicle
 def tostring(Vehicle):
     print("Here is a/an "+Vehicle.type+". \nIt is a 2019 "+Vehicle.brand+" "+Vehicle.name+", it seats "+str(Vehicle.seats)+" \nand gets "+str(Vehicle.fueleff)+
@@ -287,7 +287,7 @@ def check_ending(sentance, username,vehicle):
     return False
 
 
-#Code for actual program
+#---------------------------------------------------------------------Code for actual program-------------------------------------------------------
 print(random.choice(welcome))
 print("We currently have "+str(len(vehicleList))+" vehicles in our inventory.")
 sentance = input()
@@ -331,8 +331,9 @@ while(endconditionmain==False):
             break
 
         vehicle = getcar(vehicleList)
-        sentance = input("Are you happy with this vehicle?" )
+        sentance = input("Are you happy with this vehicle?")
         endcondition = check_ending(sentance, username, vehicle)
+
         if (len(vehicleList) < 1):
             print("I'm sorry, that is all the cars that match the given criteria.")
             break
