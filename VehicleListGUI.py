@@ -1,15 +1,11 @@
 import random
 import sys
 import time
-from tkinter import *
+import tkinter as tk
 from PIL import ImageTk, Image
 import tkinter.scrolledtext as tkscroll
 
-def click():
-    entered_text = textentry.get()
-    textentry.delete(0,'end')
-    output.insert(END, "User: "+entered_text+"\n")
-    getresponse(entered_text)
+
 
 # ------------------------------------Vehicle object---------------------------------
 class Vehicle(object):
@@ -300,8 +296,49 @@ def check_ending(sentance, username,vehicle):
 
 
 #-------------------------------------------Code for actual program-----------------------------------------------
-print(random.choice(welcome))
-print("We currently have "+str(len(vehicleList))+" vehicles in our inventory.")
+root = tk.Tk()
+import tkinter.scrolledtext as tkscroll
+entry_label = tk.Label(root, text = "Guess a number between 1 and 5: ")
+entry_label.grid(row = 0, column = 0)
+root.title("Autobot 2.0")
+background = ImageTk.PhotoImage(Image.open("auto.jpg"))
+root.configure(background="red")
+tk.Label(root, image=background, bg="black") .grid(row=0,column=0,rowspan=3, columnspan=3)
+
+entry_label = tk.Label(root, text = "User input:  ",bg="red",fg="white")
+
+entry_label.grid(row = 2, column = 1, sticky = "w")
+
+#Entry field for user guesses.
+user_entry = tk.Entry(root, width=75,bg="white")
+user_entry.grid(row = 2, column = 1)
+
+text_box = tkscroll.ScrolledText(root, width = 75, height = 30)
+text_box.grid(row = 1, column = 0, columnspan = 2)
+
+
+
+
+
+def press_enter(event = None):
+
+    text = user_entry.get()
+
+
+
+    text_box.insert("end-1c", "User: "+text+"\n")
+
+    user_entry.delete(0, "end")
+def printToGUI(string):
+    text_box.insert("end-1c", "Autobot: "+string+"\n")
+
+user_entry.bind("<Return>", press_enter)
+
+printToGUI(random.choice(welcome))
+printToGUI("We currently have "+str(len(vehicleList))+" vehicles in our inventory.")
+
+
+root.mainloop()
 sentance = input()
 check_greeting(sentance)
 check_greeting2(sentance)
@@ -357,18 +394,3 @@ while(endconditionmain==False):
     runagain()
 
 
-root = Tk()
-root.title("Autobot Test")
-background = ImageTk.PhotoImage(Image.open("auto.jpg"))
-root.configure(background="red")
-Label (root, image=background, bg="black") .grid(row=0,column=0,rowspan=3, columnspan=3, sticky=W)
-
-textentry = Entry(root, width=75,bg="white")
-textentry.grid(row=2,column=1,sticky=S+E)
-Button(root,text="Send", width=6, command=click) .grid(row=2,column=2,sticky=S+W)
-
-output = tkscroll.ScrolledText(root, width = 75, height=30, wrap=WORD, background="white")
-output.grid(rowspan=2,columnspan=2,row=1,column=1,sticky=N)
-
-
-root.mainloop()
