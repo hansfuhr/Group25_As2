@@ -1,9 +1,8 @@
 import random
 import sys
 import time
-from tkinter import *
-from PIL import ImageTk, Image
-import tkinter.scrolledtext as tkscroll
+import re
+from textblob import TextBlob
 
 
 # ------------------------------------Vehicle object---------------------------------
@@ -110,7 +109,6 @@ def getVehicles():
     vehicleList.append(Vehicle(47400, "suv", 5, "Mercedes", "C 300 4MATIC Wagon", 27))
     vehicleList.append(Vehicle(60200, "suv", 5, "Mercedes", "GLC 350e 4MATIC", 74))
     vehicleList.append(Vehicle(60500, "car", 2, "Mercedes", "SLC 300 Roadster", 27))
-    vehicleList.append(Vehicle(42900, "suv", 9, "Mercedes", "Sprinter 4x4", 17))
     vehicleList.append(Vehicle(102750, "car", 4, "Lexus", "LC 500", 16))
     vehicleList.append(Vehicle(55350, "suv", 5, "Lexus", "RX 350", 19))
     vehicleList.append(Vehicle(64500, "suv", 5, "Lexus", "RX 450H", 31))
@@ -155,9 +153,23 @@ def getVehicles():
     vehicleList.append(Vehicle(274390, "car", 2, "Lamborghini", "Huracan", 12))
     vehicleList.append(Vehicle(443804, "car", 2, "Lamborghini", "Aventador", 11))
     vehicleList.append(Vehicle(515000, "truck", 4, "Mercedes", "G63 AMG", 13))
-    vehicleList.append(Vehicle(1499, "car", 1, "John Deere", "Ride-along Mower", 4))
-    vehicleList.append(Vehicle(5, "car", 2, "Cardboard", "Box", 999))
-    vehicleList.append(Vehicle(7000, "car", 4, "Toyota", "Celica", 32))
+    #-------------------------------------Autobot 2.0 Bikes and Vans----------------------------------
+    vehicleList.append(Vehicle(5250, "motorbike", 2, "BMW", "G310R", 65))
+    vehicleList.append(Vehicle(4950, "motorbike", 2, "Honda", "CB300R", 71))
+    vehicleList.append(Vehicle(5999, "motorbike", 2, "KTM", "390 Duke", 59))
+    vehicleList.append(Vehicle(8895, "motorbike", 2, "Ducati", "Scrambler 400", 49))
+    vehicleList.append(Vehicle(21990, "motorbike", 2, "Zero", "DS", 999))
+    vehicleList.append(Vehicle(13395, "motorbike", 2, "Ducati", "Monster 821", 44))
+    vehicleList.append(Vehicle(11499, "motorbike", 2, "KTM", "Duke 790", 50))
+    vehicleList.append(Vehicle(9950, "motorbike", 2, "Triumph", "Street Triple", 46))
+    vehicleList.append(Vehicle(8299, "motorbike", 2, "Yamaha", "MT-07", 54))
+    vehicleList.append(Vehicle(7599, "motorbike", 2, "Kawasaki", "Z650", 47))
+
+    vehicleList.append(Vehicle(42900, "van", 9, "Mercedes", "Sprinter 4x4", 17))
+    vehicleList.append(Vehicle(32895, "van", 8, "Toyota", "Sienna", 22))
+    vehicleList.append(Vehicle(35190, "van", 8, "Honda", "Odyssey", 22))
+    vehicleList.append(Vehicle(32790, "van", 8, "Dodge", "Grand Caravan", 20))
+    vehicleList.append(Vehicle(27880, "van", 7, "Ford", "Transit Connect", 30))
 
 
 
@@ -171,12 +183,12 @@ endcondition = False
 
 greetings_i = ("yes", "yup","car","truck","suv","sure","ok","okay","perhaps","great")
 greetings_r = ("Excellent, let's start with your name", "That's great to hear, what can I call you?", "Before I help you, could you please enter your name?")
-greetings2_i=("no","nah","thanks","good", "okay", "ok","great")
-greetings2_r=("Well have an excellent day!","I'm sorry to hear that, goodbye", "That's unfortunate",":(")
+greetings2_i=("no","nah")
+greetings2_r=("Well have an excellent day!","I'm sorry to hear that", "That's unfortunate")
 good_i = ("excellent", "good", "great", "alright", "fine", "well","aight","dec", "amazing")
 good_r = ("That's awesome, let's get into some car details then.", "I love the enthusiasm, let's get you behind the wheel of a new car!", ":)")
 bad_i=("no","nah","bad","not","laid","been","hanging","sad","mad","depressed","lonely","down")
-bad_r=("That's awful, maybe a car can cheer you up!","That's depressing, let's get you a car and get you outta here", "Aw, well I'm sure a car will cheer you up!",":(")
+bad_r=("That's awful, maybe a car can cheer you up!","That's depressing, let's get you a car and get you outta here", "Aw, well I'm sure a car will cheer you up!")
 welcome = ("Welcome to Autobot, can I assist you today?", "Hello, my name is Autobot, can I help you find a vehicle today?", "Good day! My name is Autobot, can we get you rolling in a new vehicle?")
 seats_i = ("seats", "seating", "seats,", "seating,")
 seats_r = ("How many seats would you like?", "Most of our cars have anywhere from 2 to 8 seats, how many will you need?")
@@ -189,6 +201,9 @@ type_r = ("Are you looking for a car, truck or suv?", "Are you a car, truck, or 
 brand_i = ("brand", "brand,", "make", "make,")
 brand_r = ("What brand are you after?", "What brand are you interested in?")
 ending_i = ("yes", "thanks", "good", "yea", "yeah","sure","cool","absolutely","okay","ok")
+sentiment_pos=(":)","Great!","Awesome!","Cool beans!")
+sentiment_neg=(":(","Awe, okay. Lets make it better","Well, lets make this better!","That's not great. Lets fix that")
+sentiment_neut=("Hmm...","Ok.","Alright.")
 #---------------------------Functions for text-finding given a sentance as input---------------------------------------
 #ToString method for a vehicle
 def tostring(Vehicle):
@@ -199,6 +214,16 @@ def tostring(Vehicle):
         print("This vehicle is also electric!")
 
 from random import randrange
+#---------------------------------Sentiment analysis function 1
+def get_sentiment(line):
+    analysis = TextBlob(line)
+    print(analysis.sentiment.polarity)
+    if analysis.sentiment.polarity>0.2:
+        print(random.choice(sentiment_pos))
+    elif (analysis.sentiment.polarity<-0.2):
+        print(random.choice(sentiment_neg))
+    else:
+        print(random.choice(sentiment_neut))
 #Method that takes random car from list. Once we have narrowed down the list, we can use this to show the user a possible car match
 def getcar(list):
     index = randrange(len(list))
@@ -210,21 +235,23 @@ def check_greeting(sentance):
     for word in words:
         if word.lower() in greetings_i:
             print (random.choice(greetings_r))
+            break
 def check_greeting2(sentance):
     words = sentance.split()
     for word in words:
         if word.lower() in greetings2_i:
             print (random.choice(greetings2_r))
-def check_good(sentance):
-    words = sentance.split()
-    for word in words:
-        if word.lower() in good_i:
-            print (random.choice(good_r))
-def check_bad(sentance):
-    words = sentance.split()
-    for word in words:
-        if word.lower() in bad_i:
-            print (random.choice(bad_r))
+            break
+#------------------------Sentiment analysis function 2
+def day_sentiment(sentance):
+    analysis = TextBlob(sentance)
+    print(analysis.sentiment.polarity)
+    if analysis.sentiment.polarity > 0.2:
+        print(random.choice(good_r))
+    elif (analysis.sentiment.polarity < -0.2):
+        print(random.choice(bad_r))
+    else:
+        print(random.choice(sentiment_neut))
 def check_name(username):
     name_r = ("Nice to meet you " + username, "Pleasure to meet you " + username, "Well " + username + ", I am at your service")
     print(random.choice(name_r))
@@ -261,7 +288,7 @@ def check_type(sentance):
     for word in words:
         if word.lower() in type_i:
             print(random.choice(type_r))
-            type = input("Car, truck, or SUV:")
+            type = input("Car, truck, SUV, motorbike, or minivan:")
             uservehicle.settype(type.lower())
 def runagain():
     ending_r = ("My pleasure " + username + ", have a great day!", "Well have a wonderful day " + username,"I'm glad I could help, bye for now!")
@@ -295,25 +322,28 @@ def check_ending(sentance, username,vehicle):
 
 
 #-------------------------------------------Code for actual program-----------------------------------------------
-print(random.choice(welcome))
+
+print("Autobot has been updated to Autobot 2.0 where we now offer planes, trains and automobiles!")
 print("We currently have "+str(len(vehicleList))+" vehicles in our inventory.")
+print("-----------------------------------------------------------------------")
+print(random.choice(welcome))
 sentance = input()
+get_sentiment(sentance)
 check_greeting(sentance)
 check_greeting2(sentance)
 username = input("Name:")
 check_name(username)
 sentance = input("How is your day going?\n")
-check_bad(sentance)
-check_good(sentance)
+day_sentiment(sentance)
+sentance = input("Are you interested in a plane, a train, or an automobile?")
 endconditionmain = False
 while(endconditionmain==False):
     uservehicle = Vehicle(9999999, "", 0, "", "", 999)
     endcondition = False
     vehicleList = getVehicles()
-    print("What are some important aspects you want in \nyour vehicle?")
+    print("Currently we support the following features: \n -Fuel Efficiency \n -Seating \n -Price \n -Type of vehicle\n -Brand\n")
 
-    sentance = input(
-        "Currently we support the following features: \n -Fuel Efficiency \n -Seating \n -Price \n -Type of vehicle\n -Brand\n")
+    sentance = input("What are some important aspects you want in \nyour vehicle?")
 
     check_seats(sentance)
 
