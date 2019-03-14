@@ -2,6 +2,7 @@ import random
 import sys
 import time
 import re
+import nltk
 from textblob import TextBlob
 
 
@@ -190,21 +191,25 @@ good_r = ("That's awesome, let's get into some car details then.", "I love the e
 bad_i=("no","nah","bad","not","laid","been","hanging","sad","mad","depressed","lonely","down")
 bad_r=("That's awful, maybe a car can cheer you up!","That's depressing, let's get you a car and get you outta here", "Aw, well I'm sure a car will cheer you up!")
 welcome = ("Welcome to Autobot, can I assist you today?", "Hello, my name is Autobot, can I help you find a vehicle today?", "Good day! My name is Autobot, can we get you rolling in a new vehicle?")
-seats_i = ("seats", "seating", "seats,", "seating,")
+seats_i = ("seats", "seating")
 seats_r = ("How many seats would you like?", "Most of our cars have anywhere from 2 to 8 seats, how many will you need?")
-fuel_i = ("fuel", "fuel efficiency", "fuels", "fuel,", "fuel efficiency,", "fuels,")
+fuel_i = ("fuel", "fuel efficiency", "fuels")
 fuel_r = ("What is the worst fuel efficiency you would be okay with? \n (Anything above 100mpg is considered electric)")
-price_i = ("price", "cost", "amount", "price,", "cost,", "amount,")
+price_i = ("price", "cost", "amount")
 price_r = ("What is the maximum you would like to spend?", "How much are you looking to spend?")
-type_i = ("type", "function", "type,", "function,")
-type_r = ("Are you looking for a car, truck or suv?", "Are you a car, truck, or suv kind of person?")
-brand_i = ("brand", "brand,", "make", "make,")
+type_i = ("type", "function")
+type_r = ("Are you looking for a car, truck, suv, van, or motorbike?", "Are you a car, truck, suv, minivan, or motorbike kind of person?")
+brand_i = ("brand","make")
 brand_r = ("What brand are you after?", "What brand are you interested in?")
 ending_i = ("yes", "thanks", "good", "yea", "yeah","sure","cool","absolutely","okay","ok")
 sentiment_pos=(":)","Great!","Awesome!","Cool beans!")
 sentiment_neg=(":(","Awe, okay. Lets make it better","Well, lets make this better!","That's not great. Lets fix that")
 sentiment_neut=("Hmm...","Ok.","Alright.")
 #---------------------------Functions for text-finding given a sentance as input---------------------------------------
+def mistake():
+    error = True
+    while(error == True):
+        print("I'm sorry, I think you entered a spelling error")
 #ToString method for a vehicle
 def tostring(Vehicle):
     print("Here is a/an "+Vehicle.type+". \nIt is a 2019 "+Vehicle.brand+" "+Vehicle.name+", it seats "+str(Vehicle.seats)+" \nand gets "+str(Vehicle.fueleff)+
@@ -231,13 +236,14 @@ def getcar(list):
     tostring(vehicle)
     return vehicle
 def check_greeting(sentance):
-    words = sentance.split()
+    words = nltk.word_tokenize(sentance) #POS tagging now instead of words.split()
+    print(words)
     for word in words:
         if word.lower() in greetings_i:
             print (random.choice(greetings_r))
             break
 def check_greeting2(sentance):
-    words = sentance.split()
+    words = nltk.word_tokenize(sentance)
     for word in words:
         if word.lower() in greetings2_i:
             print (random.choice(greetings2_r))
@@ -256,44 +262,49 @@ def check_name(username):
     name_r = ("Nice to meet you " + username, "Pleasure to meet you " + username, "Well " + username + ", I am at your service")
     print(random.choice(name_r))
 def check_seats(sentance):
-    words = sentance.split()
+    words = nltk.word_tokenize(sentance)
     for word in words:
         if word.lower() in seats_i:
             print(random.choice(seats_r))
             seats = input("Seats:")
             uservehicle.setseats(seats)
+            break
 def check_brand(sentance):
-    words = sentance.split()
+    words = nltk.word_tokenize(sentance)
     for word in words:
         if word.lower() in brand_i:
             print(random.choice(brand_r))
             brand = input("Brand:")
             uservehicle.setbrand(brand)
+            break
 def check_fuel(sentence):
-   words = sentence.split()
+   words = nltk.word_tokenize(sentance)
    for word in words:
        if word.lower() in fuel_i:
            print(fuel_r)
            fuel_eff = input("Fuel efficiency level(in mpg): ")
            uservehicle.setfueleff(fuel_eff)
+           break
 def check_price(sentence):
-   words = sentence.split()
+   words = nltk.word_tokenize(sentance)
    for word in words:
        if word.lower() in price_i:
            print(random.choice(price_r))
            price = input("Price $:")
            uservehicle.setprice(price)
+           break
 def check_type(sentance):
-    words = sentance.split()
+    words = nltk.word_tokenize(sentance)
     for word in words:
         if word.lower() in type_i:
             print(random.choice(type_r))
             type = input("Car, truck, SUV, motorbike, or minivan:")
             uservehicle.settype(type.lower())
+            break
 def runagain():
     ending_r = ("My pleasure " + username + ", have a great day!", "Well have a wonderful day " + username,"I'm glad I could help, bye for now!")
     sentance = input("Would you like to search for another vehicle?")
-    words = sentance.split()
+    words = nltk.word_tokenize(sentance)
     for word in words:
         if word.lower() in greetings_i:
             print("\n")
@@ -304,12 +315,12 @@ def runagain():
 def check_ending(sentance, username,vehicle):
 
     ending_r = ("My pleasure " + username + ", have a great day!", "Well have a wonderful day " + username,"I'm glad I could help, bye for now!")
-    words = sentance.split()
+    words = nltk.word_tokenize(sentance)
     for word in words:
         if word.lower() in ending_i:
             finance = input("Would you like to know lease option for this vehicle?")
 
-            words = finance.split()
+            words = nltk.word_tokenize(finance)
             for word in words:
                 if word.lower() in ending_i:
                     years = input("In how many years would you like to pay off your " + vehicle.name + "?")
@@ -335,7 +346,7 @@ username = input("Name:")
 check_name(username)
 sentance = input("How is your day going?\n")
 day_sentiment(sentance)
-sentance = input("Are you interested in a plane, a train, or an automobile?")
+
 endconditionmain = False
 while(endconditionmain==False):
     uservehicle = Vehicle(9999999, "", 0, "", "", 999)
