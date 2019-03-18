@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40b28511-ee44-433d-8ca6-cb12e1b5d421" name="Default Changelist" comment="POS tagging implemented">
+    <list default="true" id="40b28511-ee44-433d-8ca6-cb12e1b5d421" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/VehicleListSOCKETS.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VehicleList.py" beforeDir="false" afterPath="$PROJECT_DIR$/VehicleList.py" afterDir="false" />
     </list>
@@ -13,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/VehicleList.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="211" column="37" lean-forward="true" selection-start-line="211" selection-start-column="37" selection-end-line="211" selection-end-column="37" />
+            <state relative-caret-position="3893">
+              <caret line="421" column="34" lean-forward="true" selection-start-line="421" selection-start-column="34" selection-end-line="421" selection-end-column="34" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -25,16 +26,9 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/POStag_test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/VehicleListSOCKETS.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -66,6 +60,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>time.sl</find>
+      <find>break</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -139,10 +134,10 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Quail\PycharmProjects\Group25_As2" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Quail\PycharmProjects\Group25_As2" />
     </key>
   </component>
@@ -158,7 +153,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.POStag_test">
+  <component name="RunManager" selected="Python.VehicleList">
     <configuration name="POStag_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Group25_As2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -266,8 +261,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.POStag_test" />
         <item itemvalue="Python.VehicleList" />
+        <item itemvalue="Python.POStag_test" />
         <item itemvalue="Python.VehicleListGUI" />
         <item itemvalue="Python.guitest2" />
         <item itemvalue="Python.guitest" />
@@ -404,11 +399,18 @@
       <option name="project" value="LOCAL" />
       <updated>1552449436255</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="POS tagging implemented&#10;-spelling mistake func started">
+      <created>1552535411275</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1552535411275</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17123288" />
@@ -416,14 +418,14 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49209693" visible="true" weight="0.3058485" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4915701" visible="true" weight="0.3058485" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49947312" weight="0.39980826" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49736565" weight="0.32694152" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49479166" weight="0.37315875" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50790304" side_tool="true" visible="true" weight="0.3058485" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50842994" side_tool="true" visible="true" weight="0.3058485" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49960285" weight="0.32876712" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -486,11 +488,23 @@
     <MESSAGE value="Gui added" />
     <MESSAGE value="Gui testing" />
     <MESSAGE value="Sentiment analysis implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sentiment analysis implemented" />
+    <MESSAGE value="POS tagging implemented&#10;-spelling mistake func started" />
+    <option name="LAST_COMMIT_MESSAGE" value="POS tagging implemented&#10;-spelling mistake func started" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/guitest.py" />
     <entry file="file://$PROJECT_DIR$/guitest2.py" />
+    <entry file="file://$PROJECT_DIR$/POStag_test.py" />
+    <entry file="file://$PROJECT_DIR$/VehicleList.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3893">
+          <caret line="421" column="34" lean-forward="true" selection-start-line="421" selection-start-column="34" selection-end-line="421" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/VehicleListGUI.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3536">
@@ -504,25 +518,8 @@
     <entry file="file://$PROJECT_DIR$/y.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/POStag_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/VehicleList.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="211" column="37" lean-forward="true" selection-start-line="211" selection-start-column="37" selection-end-line="211" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/VehicleListSOCKETS.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
