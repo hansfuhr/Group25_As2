@@ -208,14 +208,14 @@ sentiment_neut=("Hmm...","Ok.","Alright.")
 #---------------------------Functions for text-finding given a sentance as input---------------------------------------
 def mistake():
 
-    topics = ["trains","planes","burgers"]
+    topics = ["trains","planes","burgers","dogs","cats"]
     rando = random.choice(topics)
     print("I'm sorry, you entered an unrecognized word. Maybe it was a spelling mistake.")
     sentance = input("Would you like to try again? (y/n)")
     if(sentance=='y'):
         return True
     else:
-        print("Would you like to hear a poem about "+rando+"?")
+        print("Would you like to hear something about "+rando+"?")
         sentance = input()
         if(sentance=='y'):
             if(rando=="trains"):
@@ -238,6 +238,12 @@ def mistake():
                 print("When the pilot tells me, I'll come down,")
                 time.sleep(1)
                 print("Swooping and gliding, to the ground,")
+            elif (rando == "cats"):
+                print("Did you know, some cats are born with 6 toes!")
+
+            elif (rando == "dogs"):
+                print("Did you know, dogs can be trained in law enforcement, fire safety, and medical search and rescue!")
+
             else:
                 print("Current price of a McDonald's Big Mac: $3.99")
                 print("Bada-ba-ba-ba")
