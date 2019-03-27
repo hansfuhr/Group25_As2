@@ -9,7 +9,7 @@ There are 3 separate python files, each is the same program but some features ne
 - VehicleList initiates a database and adds all vehicles available. This is the original autobot program with all
 features that simply improved the original program.
 - VehicleListGUI is the same as VehicleList however it includes a very basic GUI
--VehicleListClient & VehicleListServer is also the same as VehicleList, however it has the functionality to
+- VehicleListClient & VehicleListServer are also the same as VehicleList, however it has the functionality to
 have a client and a server via sockets. Simply run the server then the client, and the program will be running through sockets.
 
 <h2>Code organization</h2>

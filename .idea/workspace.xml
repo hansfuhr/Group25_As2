@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40b28511-ee44-433d-8ca6-cb12e1b5d421" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/VehicleListCLIENT.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VehicleListSERVER.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Overview.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VehicleList.py" beforeDir="false" afterPath="$PROJECT_DIR$/VehicleList.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +17,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/VehicleList.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2254">
-              <caret line="248" column="38" lean-forward="true" selection-start-line="248" selection-start-column="38" selection-end-line="248" selection-end-column="38" />
+            <state relative-caret-position="1183">
+              <caret line="431" lean-forward="true" selection-start-line="431" selection-end-line="431" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -29,29 +28,45 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/VehicleListSOCKETS.py">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="318">
+              <caret line="380" lean-forward="true" selection-start-line="380" selection-end-line="380" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="584">
-                <caret line="88" column="54" selection-start-line="88" selection-start-column="54" selection-end-line="88" selection-end-column="54" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/VehicleListSERVER.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="775">
+              <caret line="307" column="43" lean-forward="true" selection-start-line="307" selection-start-column="43" selection-end-line="307" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/VehicleListGUI.py">
+        <entry file="file://$PROJECT_DIR$/VehicleListCLIENT.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3536">
-              <caret line="213" column="30" selection-start-line="213" selection-start-column="30" selection-end-line="213" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="272">
+              <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="1400">
+                <caret line="88" column="54" selection-start-line="88" selection-start-column="54" selection-end-line="88" selection-end-column="54" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -113,6 +128,8 @@
         <option value="$PROJECT_DIR$/POStag_test.py" />
         <option value="$PROJECT_DIR$/VehicleList.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/VehicleListCLIENT.py" />
+        <option value="$PROJECT_DIR$/VehicleListSERVER.py" />
       </list>
     </option>
   </component>
@@ -130,6 +147,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -141,7 +159,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -167,7 +184,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.VehicleList">
+  <component name="RunManager" selected="Python.VehicleListCLIENT">
     <configuration name="POStag_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Group25_As2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -210,6 +227,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="VehicleListCLIENT" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Group25_As2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/VehicleListCLIENT.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="VehicleListGUI" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Group25_As2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -231,7 +269,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="guitest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="VehicleListSERVER" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Group25_As2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -243,28 +281,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/guitest.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="guitest2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Group25_As2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/guitest2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/VehicleListSERVER.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -275,11 +292,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.VehicleListCLIENT" />
+        <item itemvalue="Python.VehicleListSERVER" />
         <item itemvalue="Python.VehicleList" />
         <item itemvalue="Python.POStag_test" />
         <item itemvalue="Python.VehicleListGUI" />
-        <item itemvalue="Python.guitest2" />
-        <item itemvalue="Python.guitest" />
       </list>
     </recent_temporary>
   </component>
@@ -427,25 +444,33 @@
       <option name="project" value="LOCAL" />
       <updated>1552880022090</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Readme File complete">
+      <created>1553558226381</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1553558226381</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17123288" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4910432" visible="true" weight="0.3058485" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49051633" visible="true" weight="0.3058485" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49947312" weight="0.39980826" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49736565" weight="0.32694152" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49479166" weight="0.37315875" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5089568" side_tool="true" visible="true" weight="0.3058485" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5094837" side_tool="true" visible="true" weight="0.3058485" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49960285" weight="0.32876712" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -510,7 +535,8 @@
     <MESSAGE value="Sentiment analysis implemented" />
     <MESSAGE value="POS tagging implemented&#10;-spelling mistake func started" />
     <MESSAGE value="Spelling mistake function implemented&#10;Topics outside of cars implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Spelling mistake function implemented&#10;Topics outside of cars implemented" />
+    <MESSAGE value="Readme File complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Readme File complete" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/guitest.py" />
@@ -530,12 +556,19 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/VehicleListSOCKETS.py">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="380" lean-forward="true" selection-start-line="380" selection-end-line="380" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/VehicleList.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2254">
-          <caret line="248" column="38" lean-forward="true" selection-start-line="248" selection-start-column="38" selection-end-line="248" selection-end-column="38" />
+        <state relative-caret-position="1183">
+          <caret line="431" lean-forward="true" selection-start-line="431" selection-end-line="431" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -545,10 +578,27 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="584">
+          <first_editor relative-caret-position="1400">
             <caret line="88" column="54" selection-start-line="88" selection-start-column="54" selection-end-line="88" selection-end-column="54" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VehicleListCLIENT.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VehicleListSERVER.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="775">
+          <caret line="307" column="43" lean-forward="true" selection-start-line="307" selection-start-column="43" selection-end-line="307" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
