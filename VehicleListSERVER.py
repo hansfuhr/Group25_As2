@@ -178,7 +178,7 @@ def getVehicles():
     return vehicleList
 #Variables for saving user information and stopping condition for end of program
 vehicleList = getVehicles()
-
+username = ""
 endcondition = False
 #----------------------------------------Text input and responses for text-matching-----------------------------------------------
 
@@ -294,17 +294,7 @@ def day_sentiment(sentance):
 def check_name(username):
     name_r = ("Nice to meet you " + username, "Pleasure to meet you " + username, "Well " + username + ", I am at your service")
     print(random.choice(name_r))
-def check_seats(sentance,uservehicle,conn):
 
-    words = nltk.word_tokenize(sentance)
-    for word in words:
-        if word.lower() in seats_i:
-            data = random.choice(seats_r)
-            conn.send(data.encode())
-            data = conn.recv(1024).decode()
-            seats = int(data)
-            uservehicle.setseats(seats)
-            return
 def check_brand(sentance,uservehicle,conn):
     words = nltk.word_tokenize(sentance)
     for word in words:
@@ -407,21 +397,22 @@ def server():
             uservehicle = Vehicle(9999999, "", 0, "", "", 999)
             endcondition = False
             vehicleList = getVehicles()
-            data=(
-                "Currently we support the following features: \n -Fuel Efficiency \n -Seating \n -Price \n -Type of vehicle\n -Brand\nWhat are some important aspects you want in \nyour vehicle?")
+            data="Currently we support the following features: \n -Fuel Efficiency \n -Seating \n -Price \n -Type of vehicle\n -Brand\nWhat are some important aspects you want in \nyour vehicle?"
             conn.send(data.encode())
-            data = conn.recv(1024).decode()
-            sentance = str(data)
+            features = conn.recv(1024).decode()
+            sentance = str(features)
+            print(sentance)
+            words = nltk.word_tokenize(sentance)
+            for word in words:
+                if word.lower() in seats_i:
+                    data = random.choice(seats_r)
+                    conn.send(data.encode())
+                    data = conn.recv(1024).decode()
+                    seats = int(data)
+                    uservehicle.setseats(seats)
 
-            check_seats(sentance,uservehicle,conn)
 
-            check_brand(sentance,uservehicle,conn)
 
-            check_type(sentance,uservehicle,conn)
-
-            check_fuel(sentance,uservehicle,conn)
-
-            check_price(sentance,uservehicle,conn)
             if (int(uservehicle.price) < 9999999):
                 vehicleList = [vehicle for vehicle in vehicleList if vehicle.price <= int(uservehicle.price)]
             if (uservehicle.type != ""):

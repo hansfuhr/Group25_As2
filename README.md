@@ -1,11 +1,14 @@
 <h1>Hans Fuhrmann-Assignment 3</h1>
 <h1>Project name: AutoBot 2.0</h1>
-
+<h1>Github repository: </h1>
+https://github.com/hansfuhr/Group25_As2/tree/HansFuhr_As3
+<br>For the graph showing the different features developed on a separate branch go here:
+https://github.com/hansfuhr/Group25_As2/network
 <h2>About the project</h2>
 This project is called Autobot and is essentially an AI that assists a user in picking a car, truck, SUV, minivan, or motorbike. This is done by asking the user a series of questions which helps Autobot predict what the user will prefer. Autobot is mainly for users who may have limited knowledge of what type of vehicle they are interested in.
 
 <h2>Navagation for software</h2>
-There are 3 separate python files, each is the same program but some features needed to be separated. 
+There are 4 separate python files, each is the same program but some features needed to be separated. 
 - VehicleList initiates a database and adds all vehicles available. This is the original autobot program with all
 features that simply improved the original program.
 - VehicleListGUI is the same as VehicleList however it includes a very basic GUI
@@ -13,7 +16,7 @@ features that simply improved the original program.
 have a client and a server via sockets. Simply run the server then the client, and the program will be running through sockets.
 
 <h2>Code organization</h2>
-In VehicleList.py the codes are organized into 4 parts sepearted by comments.
+In VehicleList.py the codes are organized into 4 parts separated by comments.
 1. Database of cars
 2. Text input for text matching check
 3. Function for text finding 
@@ -86,6 +89,12 @@ Autobot: Great! Let's start with a few questions (Program continues)<br>
 7. Conversation with another agent (built by a student in this class) via sockets<br>
 -The sockets program runs the same as the original program, but now it is running through a client-server input-output instead of
 the entire program just running in one console. This has many applications with autobot, as you could have multiple clients and have
-another student's chatbot talk to autobot via sockets!
+another student's chatbot act as the client and talk to autobot via sockets!<br>
+<h2>Based on your system, include a list of at least 5 features that you can extract from your code or design that can be shared with others as an API.</h2>
+One - The database of cars that was carefully crafted can be reused for many other types of car-related programs.<br>
+Two - The spell checking function could be used with any program that requires input without mistakes<br>
+Three - The type of GUI I created could easily be used as a template to create other GUI applications<br>
+Four - My sentiment analysis functions could easily be implemented in another program to detect sentiment of any given sentance<br>
+Five - Lastly, my runagain() function could be used in any program that has a recurring theme, simply replace the parts that reference autobot and apply them to your program, and the function will work!<br>
 
 
