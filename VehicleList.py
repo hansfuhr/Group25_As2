@@ -1,28 +1,34 @@
 import random
 import sys
 import time
+
+
 class Vehicle(object):
 
     def __init__(self, price, type, seats, brand, name, fueleff):
-
         self.price = price
         self.type = type
         self.seats = seats
         self.name = name
-        self.brand=brand
+        self.brand = brand
         self.fueleff = fueleff
 
-    def setbrand(self,brand):
-        self.brand=brand
-    def setprice(self,price):
+    def setbrand(self, brand):
+        self.brand = brand
+
+    def setprice(self, price):
         self.price = price
-    def settype(self,type):
+
+    def settype(self, type):
         self.type = type
+
     def setseats(self, seats):
         self.seats = seats
-    def setname(self,name):
+
+    def setname(self, name):
         self.name = name
-    def setfueleff(self,fueleff):
+
+    def setfueleff(self, fueleff):
         self.fueleff = fueleff
 
 
@@ -119,7 +125,7 @@ def getVehicles():
     vehicleList.append(Vehicle(76049, "car", 8, "Ford", "Expedition Limited MAX", 21))
     vehicleList.append(Vehicle(36900, "suv", 5, "Audi", "Q2", 37))
     vehicleList.append(Vehicle(44536, "car", 5, "Audi", "A3", 33))
-    vehicleList.append(Vehicle(93206, "car", 5, "Audi", "RS 5 Coupé", 27))
+    vehicleList.append(Vehicle(93206, "car", 5, "Audi", "RS 5 Coupe", 27))
     vehicleList.append(Vehicle(48003, "car", 5, "Audi", "A4 Avant", 27))
     vehicleList.append(Vehicle(68537, "car", 5, "Audi", "S4 Avant", 30))
     # Tayler Verhaegen(Nissan, KIA, Volkswagen, Cadillac)
@@ -153,27 +159,33 @@ def getVehicles():
     vehicleList.append(Vehicle(5, "car", 2, "Cardboard", "Box", 999))
     vehicleList.append(Vehicle(7000, "car", 4, "Toyota", "Celica", 32))
 
-
-
     # ------------------------------------------End of Database-------------------------------------------------------------------
     return vehicleList
-#Variables for saving user information and stopping condition for end of program
+
+
+# Variables for saving user information and stopping condition for end of program
 vehicleList = getVehicles()
 
 endcondition = False
-#----------------------------------------Text input and responses for text-matching-----------------------------------------------
+# ----------------------------------------Text input and responses for text-matching-----------------------------------------------
 
-greetings_i = ("yes", "yup","car","truck","suv","sure","ok","okay","perhaps","great")
-greetings_r = ("Excellent, let's start with your name", "That's great to hear, what can I call you?", "Before I help you, could you please enter your name?")
-greetings2_i=("no","nah","thanks","good", "okay", "ok","great")
-greetings2_r=("Well have an excellent day!","I'm sorry to hear that, goodbye", "That's unfortunate",":(")
-good_i = ("excellent", "good", "great", "alright", "fine", "well","aight","dec", "amazing")
-good_r = ("That's awesome, let's get into some car details then.", "I love the enthusiasm, let's get you behind the wheel of a new car!", ":)")
-bad_i=("no","nah","bad","not","laid","been","hanging","sad","mad","depressed","lonely","down")
-bad_r=("That's awful, maybe a car can cheer you up!","That's depressing, let's get you a car and get you outta here", "Aw, well I'm sure a car will cheer you up!",":(")
-welcome = ("Welcome to Autobot, can I assist you today?", "Hello, my name is Autobot, can I help you find a vehicle today?", "Good day! My name is Autobot, can we get you rolling in a new vehicle?")
+greetings_i = ("yes", "yup", "car", "truck", "suv", "sure", "ok", "okay", "perhaps", "great")
+greetings_r = ("Excellent, let's start with your name", "That's great to hear, what can I call you?",
+               "Before I help you, could you please enter your name?")
+greetings2_i = ("no", "nah", "thanks", "good", "okay", "ok", "great")
+greetings2_r = ("Well have an excellent day!", "I'm sorry to hear that, goodbye", "That's unfortunate", ":(")
+good_i = ("excellent", "good", "great", "alright", "fine", "well", "aight", "dec", "amazing")
+good_r = ("That's awesome, let's get into some car details then.",
+          "I love the enthusiasm, let's get you behind the wheel of a new car!", ":)")
+bad_i = ("no", "nah", "bad", "not", "laid", "been", "hanging", "sad", "mad", "depressed", "lonely", "down")
+bad_r = ("That's awful, maybe a car can cheer you up!", "That's depressing, let's get you a car and get you outta here",
+         "Aw, well I'm sure a car will cheer you up!", ":(")
+welcome = (
+    "Welcome to Autobot, can I assist you today?", "Hello, my name is Autobot, can I help you find a vehicle today?",
+    "Good day! My name is Autobot, can we get you rolling in a new vehicle?")
 seats_i = ("seats", "seating", "seats,", "seating,")
-seats_r = ("How many seats would you like?", "Most of our cars have anywhere from 2 to 8 seats, how many will you need?")
+seats_r = (
+    "How many seats would you like?", "Most of our cars have anywhere from 2 to 8 seats, how many will you need?")
 fuel_i = ("fuel", "fuel efficiency", "fuels", "fuel,", "fuel efficiency,", "fuels,")
 fuel_r = ("What is the worst fuel efficiency you would be okay with? \n (Anything above 100mpg is considered electric)")
 price_i = ("price", "cost", "amount", "price,", "cost,", "amount,")
@@ -182,46 +194,66 @@ type_i = ("type", "function", "type,", "function,")
 type_r = ("Are you looking for a car, truck or suv?", "Are you a car, truck, or suv kind of person?")
 brand_i = ("brand", "brand,", "make", "make,")
 brand_r = ("What brand are you after?", "What brand are you interested in?")
-ending_i = ("yes", "thanks", "good", "yea", "yeah","sure","cool","absolutely","okay","ok")
-#---------------------------Functions for text-finding given a sentance as input---------------------------------------
-#ToString method for a vehicle
-def tostring(Vehicle):
-    print("Here is a/an "+Vehicle.type+". \nIt is a 2019 "+Vehicle.brand+" "+Vehicle.name+", it seats "+str(Vehicle.seats)+" \nand gets "+str(Vehicle.fueleff)+
-          " miles to the gallon. \nYou can walk away with this "+Vehicle.type+" for $"+str(Vehicle.price))
-    if (Vehicle.fueleff > 100):
+ending_i = ("yes", "thanks", "good", "yea", "yeah", "sure", "cool", "absolutely", "okay", "ok")
 
+
+# ---------------------------Functions for text-finding given a sentance as input---------------------------------------
+# ToString method for a vehicle
+def tostring(Vehicle):
+    print(
+            "Here is a/an " + Vehicle.type + ". \nIt is a 2019 " + Vehicle.brand + " " + Vehicle.name + ", it seats " + str(
+        Vehicle.seats) + " \nand gets " + str(Vehicle.fueleff) +
+            " miles to the gallon. \nYou can walk away with this " + Vehicle.type + " for $" + str(Vehicle.price))
+    if (Vehicle.fueleff > 100):
         print("This vehicle is also electric!")
 
+
 from random import randrange
-#Method that takes random car from list. Once we have narrowed down the list, we can use this to show the user a possible car match
+
+
+# Method that takes random car from list. Once we have narrowed down the list, we can use this to show the user a possible car match
 def getcar(list):
     index = randrange(len(list))
     vehicle = list.pop(index)
     tostring(vehicle)
     return vehicle
+
+
 def check_greeting(sentance):
     words = sentance.split()
     for word in words:
         if word.lower() in greetings_i:
             print (random.choice(greetings_r))
+
+
 def check_greeting2(sentance):
     words = sentance.split()
     for word in words:
         if word.lower() in greetings2_i:
             print (random.choice(greetings2_r))
+
+
 def check_good(sentance):
     words = sentance.split()
     for word in words:
         if word.lower() in good_i:
             print (random.choice(good_r))
+
+
 def check_bad(sentance):
     words = sentance.split()
     for word in words:
         if word.lower() in bad_i:
             print (random.choice(bad_r))
+
+
 def check_name(username):
-    name_r = ("Nice to meet you " + username, "Pleasure to meet you " + username, "Well " + username + ", I am at your service")
+    name_r = (
+        "Nice to meet you " + username, "Pleasure to meet you " + username,
+        "Well " + username + ", I am at your service")
     print(random.choice(name_r))
+
+
 def check_seats(sentance):
     words = sentance.split()
     for word in words:
@@ -234,6 +266,8 @@ def check_seats(sentance):
             print(" . ")
             time.sleep(1)
             uservehicle.setseats(seats)
+
+
 def check_brand(sentance):
     words = sentance.split()
     for word in words:
@@ -246,30 +280,36 @@ def check_brand(sentance):
             print(" . ")
             time.sleep(1)
             uservehicle.setbrand(brand)
+
+
 def check_fuel(sentence):
-   words = sentence.split()
-   for word in words:
-       if word.lower() in fuel_i:
-           print(fuel_r)
-           fuel_eff = input("Fuel efficiency level(in mpg): ")
-           time.sleep(1)
-           print(" . ")
-           time.sleep(1)
-           print(" . ")
-           time.sleep(1)
-           uservehicle.setfueleff(fuel_eff)
+    words = sentence.split()
+    for word in words:
+        if word.lower() in fuel_i:
+            print(fuel_r)
+            fuel_eff = input("Fuel efficiency level(in mpg): ")
+            time.sleep(1)
+            print(" . ")
+            time.sleep(1)
+            print(" . ")
+            time.sleep(1)
+            uservehicle.setfueleff(fuel_eff)
+
+
 def check_price(sentence):
-   words = sentence.split()
-   for word in words:
-       if word.lower() in price_i:
-           print(random.choice(price_r))
-           price = input("Price $:")
-           time.sleep(1)
-           print(" . ")
-           time.sleep(1)
-           print(" . ")
-           time.sleep(1)
-           uservehicle.setprice(price)
+    words = sentence.split()
+    for word in words:
+        if word.lower() in price_i:
+            print(random.choice(price_r))
+            price = input("Price $:")
+            time.sleep(1)
+            print(" . ")
+            time.sleep(1)
+            print(" . ")
+            time.sleep(1)
+            uservehicle.setprice(price)
+
+
 def check_type(sentance):
     words = sentance.split()
     for word in words:
@@ -282,8 +322,11 @@ def check_type(sentance):
             print(" . ")
             time.sleep(1)
             uservehicle.settype(type.lower())
+
+
 def runagain():
-    ending_r = ("My pleasure " + username + ", have a great day!", "Well have a wonderful day " + username,"I'm glad I could help, bye for now!")
+    ending_r = ("My pleasure " + username + ", have a great day!", "Well have a wonderful day " + username,
+                "I'm glad I could help, bye for now!")
     sentance = input("Would you like to search for another vehicle?")
     time.sleep(1)
     print(" . ")
@@ -298,9 +341,11 @@ def runagain():
 
         print(random.choice(ending_r))
         sys.exit()
-def check_ending(sentance, username,vehicle):
 
-    ending_r = ("My pleasure " + username + ", have a great day!", "Well have a wonderful day " + username,"I'm glad I could help, bye for now!")
+
+def check_ending(sentance, username, vehicle):
+    ending_r = ("My pleasure " + username + ", have a great day!", "Well have a wonderful day " + username,
+                "I'm glad I could help, bye for now!")
     words = sentance.split()
     for word in words:
         if word.lower() in ending_i:
@@ -322,16 +367,16 @@ def check_ending(sentance, username,vehicle):
                     print(" . ")
                     time.sleep(1)
                     months = int(years) * 26
-                    print("The rate would be $"+str(round(vehicle.price/months,2))+" bi-weekly for the next "+str(years)+" year/years")
-
+                    print("The rate would be $" + str(
+                        round(vehicle.price / months, 2)) + " bi-weekly for the next " + str(years) + " year/years")
 
             return True
     return False
 
 
-#-------------------------------------------Code for actual program-----------------------------------------------
+# -------------------------------------------Code for actual program-----------------------------------------------
 print(random.choice(welcome))
-print("We currently have "+str(len(vehicleList))+" vehicles in our inventory.")
+print("We currently have " + str(len(vehicleList)) + " vehicles in our inventory.")
 sentance = input()
 time.sleep(1)
 print(" . ")
@@ -356,7 +401,7 @@ time.sleep(1)
 check_bad(sentance)
 check_good(sentance)
 endconditionmain = False
-while(endconditionmain==False):
+while (endconditionmain == False):
     uservehicle = Vehicle(9999999, "", 0, "", "", 999)
     endcondition = False
     vehicleList = getVehicles()
@@ -399,11 +444,10 @@ while(endconditionmain==False):
         if (len(vehicleList) == 0):
             print("I'm sorry, none of our cars match that criteria")
 
-
             break
 
         vehicle = getcar(vehicleList)
-        sentance = input("Are you happy with this vehicle?" )
+        sentance = input("Are you happy with this vehicle?")
         time.sleep(1)
         print(" . ")
         time.sleep(1)
