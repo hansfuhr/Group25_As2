@@ -373,7 +373,7 @@ def check_ending(sentance, username,vehicle):
 
 #-------------------------------------------Code for actual program-----------------------------------------------
 
-print("Autobot has been updated to Autobot 2.0 where we now offer planes, trains and automobiles!")
+print("Autobot has been updated to Autobot 2.0!")
 print("We currently have "+str(len(vehicleList))+" vehicles in our inventory.")
 print("-----------------------------------------------------------------------")
 print(random.choice(welcome))

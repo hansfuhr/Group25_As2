@@ -96,5 +96,77 @@ Two - The spell checking function could be used with any program that requires i
 Three - The type of GUI I created could easily be used as a template to create other GUI applications<br>
 Four - My sentiment analysis functions could easily be implemented in another program to detect sentiment of any given sentance<br>
 Five - Lastly, my runagain() function could be used in any program that has a recurring theme, simply replace the parts that reference autobot and apply them to your program, and the function will work!<br>
-
-
+<br><h2>Level 0 & 1 DFD Descriptions</h2>
+Level 0 - This is a very basic data flow diagram of Autobot 2.0. It shows that the user enters input and the program returns a list of cars that match their given criteria.
+<br>Level 1 - This is a more detailed diagram of Autobot 2.0. This diagram shows how Autobot checks for errors, offers a lease option, and is overall just more detailed.
+<h2>Sample output</h2>
+<b>Good/feasible dialogue:</b><br>
+<br>Autobot has been updated to Autobot 2.0!
+<br>We currently have 126 vehicles in our inventory.
+<br>-----------------------------------------------------------------------
+<br>Good day! My name is Autobot, can we get you rolling in a new vehicle?
+<br>Yes please!
+<br>Alright.
+<br>Excellent, let's start with your name
+<br>Name:Hans
+<br>Nice to meet you Hans
+<br>How is your day going?
+<br>Pretty great, thanks!
+<br>That's awesome, let's get into some car details then.
+<br>Currently we support the following features: 
+ <br>-Fuel Efficiency 
+ <br>-Seating 
+ <br>-Price 
+ <br>-Type of vehicle
+ <br>-Brand
+<br>
+<br>What are some important aspects you want in 
+<br>your vehicle?Hmm, how about sating, brond, and tipe
+<br>I'm sorry, you entered an unrecognized word. Maybe it was a spelling mistake.
+<br>Would you like to try again?
+<br>Yes
+<br>What are some important aspects you want in 
+<br>your vehicle?Hmm, how about seating, brand, and type
+<br>Most of our cars have anywhere from 2 to 8 seats, how many will you need?
+<br>Seats:2
+<br>What brand are you interested in?
+<br>Brand:Kawasaki
+<br>Are you looking for a car, truck, suv, van, or motorbike?
+<br>Car, truck, SUV, motorbike, or van:motorbike
+<br>
+<br>I have found 1 vehicles that match your criteria!
+<br>
+<br>
+<br>Here is a/an motorbike. 
+<br>It is a 2019 Kawasaki Z650, it seats 2 
+<br>and gets 47 miles to the gallon. 
+<br>You can walk away with this motorbike for $7599
+<br>Are you happy with this vehicle?yes
+<br>Would you like to know lease option for this vehicle?yes
+<br>In how many years would you like to pay off your Z650?3
+<br>The rate would be $97.42 bi-weekly for the next 3 year/years
+<br>I'm sorry, that is all the cars that match the given criteria.
+<br>Would you like to search for another vehicle?No thanks!
+<br>I'm glad I could help, bye for now!
+<br>
+<br>
+<br><b>Two short dialogues where your agent is not able to handle the conversation properly:</b>
+<br>
+<br><b>(In this example, the user enters a number as a string instead of an integer)</b>
+<br>Most of our cars have anywhere from 2 to 8 seats, how many will you need?
+<br>Seats:seven
+<br>I'm sorry, you entered an unrecognized word. Maybe it was a spelling mistake.
+<br>Would you like to try again?
+<br>
+<br><b>(In this example, the GUI's limitations are shown. As you can see, after the user enters input, the program cannot handle a correct response)</b>
+<br>Autobot has been updated to Autobot 2.0!
+<br>We currently have 126 vehicles in our inventory.
+<br>-----------------------------------------------------------------------
+<br>Good day! My name is Autobot, can we get you rolling in a new vehicle?
+<br>Yes please!
+<br>
+<br>
+<h2>Limitations</h2>
+Since the spelling mistakes function has been added, there are very few actual limitations of the Autobot program. Any wrong input can be corrected, and the program can be repeated indefinitely (search for more and more cars). The main limitation is
+in the GUI. For the GUI to properly work, the entire program must be re-coded in an event-driven fashion. Other than that, Autobot works exactly as expected. Better than 
+expected in my opinion. Thank you for your time :)

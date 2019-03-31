@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40b28511-ee44-433d-8ca6-cb12e1b5d421" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/LEVEL 0 DFD.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LEVEL 1 DFD.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment 2 - Project Plan-2.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VehicleListSERVER.py" beforeDir="false" afterPath="$PROJECT_DIR$/VehicleListSERVER.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VehicleListSOCKETS.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/y.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VehicleList.py" beforeDir="false" afterPath="$PROJECT_DIR$/VehicleList.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/VehicleList.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1812">
-              <caret line="431" selection-start-line="431" selection-end-line="431" />
+            <state relative-caret-position="371">
+              <caret line="375" column="49" lean-forward="true" selection-start-line="375" selection-start-column="49" selection-end-line="375" selection-end-column="49" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -30,9 +29,14 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LEVEL 0 DFD.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/VehicleListSERVER.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3060">
+            <state relative-caret-position="2958">
               <caret line="180" column="13" selection-start-line="180" selection-start-column="13" selection-end-line="180" selection-end-column="13" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -45,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/VehicleListCLIENT.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+              <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -54,8 +58,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="504">
-                <caret line="97" column="202" selection-start-line="97" selection-start-column="202" selection-end-line="97" selection-end-column="202" />
+              <first_editor relative-caret-position="606">
+                <caret line="171" column="50" selection-start-line="171" selection-start-column="50" selection-end-line="171" selection-end-column="50" />
               </first_editor>
               <second_editor />
             </state>
@@ -112,16 +116,16 @@
         <option value="$PROJECT_DIR$/guitest2.py" />
         <option value="$PROJECT_DIR$/VehicleListGUI.py" />
         <option value="$PROJECT_DIR$/POStag_test.py" />
-        <option value="$PROJECT_DIR$/VehicleList.py" />
         <option value="$PROJECT_DIR$/VehicleListCLIENT.py" />
         <option value="$PROJECT_DIR$/VehicleListSERVER.py" />
+        <option value="$PROJECT_DIR$/VehicleList.py" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-175" />
-    <option name="y" value="-19" />
+    <option name="x" value="-109" />
+    <option name="y" value="45" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -151,10 +155,10 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Quail\PycharmProjects\Group25_As2" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Quail\PycharmProjects\Group25_As2" />
     </key>
   </component>
@@ -170,7 +174,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.VehicleListCLIENT">
+  <component name="RunManager" selected="Python.VehicleList">
     <configuration name="POStag_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Group25_As2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -278,9 +282,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.VehicleList" />
         <item itemvalue="Python.VehicleListCLIENT" />
         <item itemvalue="Python.VehicleListSERVER" />
-        <item itemvalue="Python.VehicleList" />
         <item itemvalue="Python.POStag_test" />
         <item itemvalue="Python.VehicleListGUI" />
       </list>
@@ -444,26 +448,33 @@
       <option name="project" value="LOCAL" />
       <updated>1553660658306</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Sockets complete, &#10;Documentation 90% done">
+      <created>1553752560493</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1553752560493</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17123288" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17123288" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48998946" visible="true" weight="0.3058485" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.48946258" visible="true" weight="0.3058485" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49947312" weight="0.39980826" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49736565" weight="0.32694152" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49479166" weight="0.37315875" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.51001054" side_tool="true" visible="true" weight="0.3058485" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5105374" side_tool="true" visible="true" weight="0.3058485" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49960285" weight="0.32876712" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -530,7 +541,8 @@
     <MESSAGE value="Spelling mistake function implemented&#10;Topics outside of cars implemented" />
     <MESSAGE value="Readme File complete" />
     <MESSAGE value="Sockets in Beta" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sockets in Beta" />
+    <MESSAGE value="Sockets complete, &#10;Documentation 90% done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sockets complete, &#10;Documentation 90% done" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/guitest.py" />
@@ -546,16 +558,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VehicleListCLIENT.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/VehicleListSOCKETS.py" />
+    <entry file="file://$PROJECT_DIR$/y.txt" />
     <entry file="file://$PROJECT_DIR$/VehicleListSERVER.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3060">
+        <state relative-caret-position="2958">
           <caret line="180" column="13" selection-start-line="180" selection-start-column="13" selection-end-line="180" selection-end-column="13" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
@@ -563,23 +570,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VehicleListSOCKETS.py">
+    <entry file="file://$PROJECT_DIR$/VehicleListCLIENT.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="380" lean-forward="true" selection-start-line="380" selection-end-line="380" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="272">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/y.txt">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/LEVEL 0 DFD.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/VehicleList.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1812">
-          <caret line="431" selection-start-line="431" selection-end-line="431" />
+        <state relative-caret-position="371">
+          <caret line="375" column="49" lean-forward="true" selection-start-line="375" selection-start-column="49" selection-end-line="375" selection-end-column="49" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -589,8 +593,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="504">
-            <caret line="97" column="202" selection-start-line="97" selection-start-column="202" selection-end-line="97" selection-end-column="202" />
+          <first_editor relative-caret-position="606">
+            <caret line="171" column="50" selection-start-line="171" selection-start-column="50" selection-end-line="171" selection-end-column="50" />
           </first_editor>
           <second_editor />
         </state>
