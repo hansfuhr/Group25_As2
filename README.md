@@ -25,15 +25,19 @@ volleyball, you may want to add basketball as a second topic.
 
 sample output: 
 
-  (AutoBot) Are you a car, truck, suv, or motorcycle kind of person?\n
-  Car, truck, SUV, or motorcycle:
+  (AutoBot) Are you a car, truck, suv, or motorcycle kind of person? Car, truck, SUV, or motorcycle:
+  
   (Input)motorcycle
+  
   (AutoBot)I have found 9 vehicles that match your criteria!
+  
   (AutoBot)Here is a/an motorcycle. 
+
   It is a 2019 Kawasaki Ninja ZX-6R, it seats 2 
   and gets 35 miles to the gallon. 
   You can walk away with this motorcycle for $11999
   Are you happy with this vehicle?
+  
   (Input)Yes
 
 2. (3 points): Add a feature that enables your agent to give at least 5 different
@@ -45,9 +49,13 @@ sample output:
 
   (AutoBot)We can't recognize what you mean by that :(
   Would you like to try again? (y/n)
+  
   (Input) y
+  
   (AutoBot)Do you want to know about computers? (y/n)
+  
   (Input) y
+  
   (AutoBot)Apple's macbook is so expensive
   Did you know if you fully upgrade macbook pro 15 with touchbar
   You have to pay like 8400 dollars
