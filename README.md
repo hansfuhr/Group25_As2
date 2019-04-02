@@ -45,9 +45,9 @@ reasonable responses when the user enters something outside the two topics.
 
 (AutoBot)We can't recognize what you mean by that :(
 Would you like to try again? (y/n)
-(Input)y
+(Input) y
 Do you want to know about computers? (y/n)
-(Input)y
+(Input) y
 (AutoBot)Apple's macbook is so expensive
 Did you know if you fully upgrade macbook pro 15 with touchbar
 You have to pay like 8400 dollars
