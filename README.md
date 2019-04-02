@@ -25,7 +25,7 @@ volleyball, you may want to add basketball as a second topic.
 
 sample output: 
 
-  (AutoBot) Are you a car, truck, suv, or motorcycle kind of person?
+  (AutoBot) Are you a car, truck, suv, or motorcycle kind of person?\n
   Car, truck, SUV, or motorcycle:
   (Input)motorcycle
   (AutoBot)I have found 9 vehicles that match your criteria!
