@@ -91,5 +91,71 @@ sample output:<br/>
       (Input) bad<br/>
       (AutoBot) That's awful, maybe a car can cheer you up!<br/>
 
+<h2> Documentation (30 points) </h2>
+<h3> Readme.md (2 points) - DONE </h3>
+<h3> Explanations of each implementations made for A3 in Readme File (5 points) - DONE </h3>
+<h3> Provide a Level 0 DFD for your system with description (3 points) </h3>
 
-       
+<h3> Provide a Level 1 DFD for your system with description (5 points) </h3>
+
+<h3> Submission of your GitHub repository.</h3>
+- Graph showing different features developed on a separate branch and the commits made in the
+repository.<br/><br/>
+- https://github.com/hansfuhr/Group25_As2/network<br/>
+
+<h3> sample output </h3>
+<h2>Feasible conversation with new features</h2>
+Hello, my name is Autobot, can I help you find a vehicle today?<br/>
+We currently have 124 vehicles in our inventory.<br/>
+hiii hows it going<br/>
+We can't recognize what you mean by that :(  <br/>
+Was it a spelling error? Would you like to try again? (y/n)<br/>
+y<br/>
+Good day! My name is Autobot, can we get you rolling in a new vehicle?<br/>
+yes<br/>
+Before I help you, could you please enter your name?<br/>
+Name:Jae<br/>
+Pleasure to meet you Jae<br/>
+How is your day going?<br/>
+good<br/>
+That's awesome, let's get into some car details then.<br/>
+What are some important aspects you want in your vehicle?<br/>
+Currently we support the following features: <br/>
+ -Fuel Efficiency <br/>
+ -Seating <br/>
+ -Price <br/>
+ -Type of vehicle<br/>
+ -Brand<br/>
+price<br/>
+What is the maximum you would like to spend?<br/>
+Price $:500000<br/>
+I have found 122 vehicles that match your criteria!<br/>
+Here is a/an truck. <br/>
+It is a 2019 Toyota Tundra, it seats 5 <br/>
+and gets 14 miles to the gallon. <br/>
+You can walk away with this truck for $39625<br/>
+Are you happy with this vehicle?<br/>
+no<br/>
+Here is a/an suv. <br/>
+It is a 2019 Lexus RX 450H, it seats 5 <br/>
+and gets 31 miles to the gallon. <br/>
+You can walk away with this suv for $64500<br/>
+Are you happy with this vehicle?<br/>
+no<br/>
+Here is a/an car. <br/>
+It is a 2019 Tesla Model S, it seats 7 <br/>
+and gets 999 miles to the gallon. <br/>
+You can walk away with this car for $124600<br/>
+This vehicle is also electric!<br/>
+Are you happy with this vehicle?<br/>
+sure<br/>
+Would you like to know lease option for this vehicle?<br/>
+yes<br/>
+In how many years would you like to pay off your Model S?<br/>
+5<br/>
+The rate would be $958.46 bi-weekly for the next 5 year/years<br/>
+Would you like to search for another vehicle?<br/>
+no<br/>
+My pleasure Jae, have a great day!<br/>
+
+
