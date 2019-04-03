@@ -170,7 +170,7 @@ Alright than! Maybe I will tell you the synonyms of 'happy' to brighten up your 
 {'glad', 'felicitous', 'happy', 'well-chosen'}<br/>
 Have a nice day!<br/>
 
-<b>Next one</b>
+<b>Next one</b><br/><br/>
 Good day! My name is Autobot, can we get you rolling in a new vehicle?<br/>
 We currently have 124 vehicles in our inventory.<br/>
 NOPE<br/>
@@ -185,3 +185,14 @@ Coffee contains caffeine<br/>
 Did you know you can get addicted to caffeine?<br/>
 Bet, you didnt' know :) <br/>
 Have a nice day!<br/>
+
+<b> Limitations: </b> </br>
+  We can see from short conversations above, if user keeps inputing false responses to questions, it can lead to program not being useful and just terminate the system without helping the user. 
+  
+<h2> 5 features that I can extract to use for other APIs</h2>
+<b> Spellchecker can be used with other APIs to check spelling mistakes for their systems.</b><br/>
+<b> Synonym recognition can be used in other APIs to make their systems recognize synonms using nltk library. </b><br/>
+<b> I can literally use the same chatbot system with other categories by just changing the database.</b><br/>
+<b> POS tagging can be used in other programs to let the machine learn the way humans speak (recognize punctuations.) </b><br/>
+<b> Easy to add / delete / update databases for my system so we can make a smart chatbot if we want to easily. </b><br/>
+
