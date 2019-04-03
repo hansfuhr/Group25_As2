@@ -67,29 +67,27 @@ For example, use the Porter Stemmer, or some other pre-established algorithm.</h
         (Input)     y
         (AutoBot)   Welcome to Autobot, can I assist you today?
         (Input)     sure
-
-<h3>4. (10 points each): Use of language toolkits, incorporate feature to improve your
-conversation's flow:</h3>
-    o Synonym recognition - WordNet (you'll need a Java API to it)
-    - AutoBot can generate synonmy of word 'happy' if user feels like not talking about anything to brighten up his/her day!
-    - Sample Output:
-      (AutoBot)   Hello, my name is Autobot, can I help you find a vehicle today?
-                  We currently have 124 vehicles in our inventory.
-      (Input)     wefqef
-      (AutoBot)   We can't recognize what you mean by that :(
-                  Was it a spelling error? Would you like to try again? (y/n)
-      (Input)     n
-      (AutoBot)   Okay, maybe you want to know about computers instead! (y/n)
-      (Input)     n
-      (AutoBot)   Alright than! Maybe I will tell you the synonyms of 'happy' to brighten up your day
-                  {'well-chosen', 'felicitous', 'happy', 'glad'}
-                  Have a nice day
-    o POS tagging - Stanford toolkit, OpenNLP
-      - AutoBot can recognize punctuations like humans do using NLTK library, this helps AutoBot to talk like humans almost.
-      - Implemented "words = nltk.word_tokenize(sentance)" to all words declarations to use nltk library.
-      - Sample Output:
-        With POS
-        (AutoBot)   Welcome to Autobot, can I assist you today?
-        (Input)     Sure!
-        (AutoBot)   "I love the enthusiasm, let's get you behind the wheel of a new car!"
+<h2>  Language toolkits to improve conversation's flow:</h2>
+<h3>4. (10 points) Synonym recognition - WordNet (you'll need a Java API to it)</h3>
+    - AutoBot can generate synonmy of word 'happy' if user feels like not talking about anything to brighten up his/her day!<br/>
+    - Sample Output:<br/>
+      (AutoBot)   Hello, my name is Autobot, can I help you find a vehicle today?<br/>
+                  We currently have 124 vehicles in our inventory.<br/>
+      (Input)     wefqef<br/>
+      (AutoBot)   We can't recognize what you mean by that :(<br/>
+                  Was it a spelling error? Would you like to try again? (y/n)<br/>
+      (Input)     n<br/>
+      (AutoBot)   Okay, maybe you want to know about computers instead! (y/n)<br/>
+      (Input)     n<br/>
+      (AutoBot)   Alright than! Maybe I will tell you the synonyms of 'happy' to brighten up your day<br/>
+                  {'well-chosen', 'felicitous', 'happy', 'glad'}<br/>
+                  Have a nice day<br/>
+<h3>POS tagging - Stanford toolkit, OpenNLP</h3>
+      - AutoBot can recognize punctuations like humans do using NLTK library, this helps AutoBot to talk like humans almost.<br/>
+      - Implemented "words = nltk.word_tokenize(sentance)" to all words declarations to use nltk library.<br/>
+      - Sample Output:<br/>
+        With POS<br/>
+        (AutoBot)   Welcome to Autobot, can I assist you today?<br/>
+        (Input)     Sure!<br/>
+        (AutoBot)   "I love the enthusiasm, let's get you behind the wheel of a new car!"<br/>
        
