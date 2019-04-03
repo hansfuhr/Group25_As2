@@ -190,9 +190,9 @@ Have a nice day!<br/>
   We can see from short conversations above, if user keeps inputing false responses to questions, it can lead to program not being useful and just terminate the system without helping the user. 
   
 <h2> 5 features that I can extract to use for other APIs</h2>
-<b> Spellchecker can be used with other APIs to check spelling mistakes for their systems.</b><br/>
-<b> Synonym recognition can be used in other APIs to make their systems recognize synonms using nltk library. </b><br/>
-<b> I can literally use the same chatbot system with other categories by just changing the database.</b><br/>
-<b> POS tagging can be used in other programs to let the machine learn the way humans speak (recognize punctuations.) </b><br/>
-<b> Easy to add / delete / update databases for my system so we can make a smart chatbot if we want to easily. </b><br/>
+<b> 1. Spellchecker can be used with other APIs to check spelling mistakes for their systems.</b><br/>
+<b> 2. Synonym recognition can be used in other APIs to make their systems recognize synonms using nltk library. </b><br/>
+<b> 3. I can literally use the same chatbot system with other categories by just changing the database.</b><br/>
+<b> 4. POS tagging can be used in other programs to let the machine learn the way humans speak (recognize punctuations.) </b><br/>
+<b> 5. Easy to add / delete / update databases for my system so we can make a smart chatbot if we want to easily. </b><br/>
 
