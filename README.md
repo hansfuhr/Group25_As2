@@ -103,7 +103,6 @@ sample output:<br/>
 repository.<br/><br/>
 - https://github.com/hansfuhr/Group25_As2/network<br/>
 
-<h3> sample output </h3>
 <h2>Feasible conversation with new features</h2>
 Hello, my name is Autobot, can I help you find a vehicle today?<br/>
 We currently have 124 vehicles in our inventory.<br/>
@@ -158,4 +157,31 @@ Would you like to search for another vehicle?<br/>
 no<br/>
 My pleasure Jae, have a great day!<br/>
 
+<h3> two short dialogues when my agent is not able to handle the conversation properly </h3>
+Good day! My name is Autobot, can we get you rolling in a new vehicle?<br/>
+We currently have 124 vehicles in our inventory.<br/>
+suuure<br/>
+We can't recognize what you mean by that :(  <br/>
+Was it a spelling error? Would you like to try again? (y/n)<br/>
+n<br/>
+Okay, maybe you want to know about coffee instead! (y/n)<br/>
+n<br/>
+Alright than! Maybe I will tell you the synonyms of 'happy' to brighten up your day!<br/>
+{'glad', 'felicitous', 'happy', 'well-chosen'}<br/>
+Have a nice day!<br/>
 
+<b>Next one</b>
+Good day! My name is Autobot, can we get you rolling in a new vehicle?<br/>
+We currently have 124 vehicles in our inventory.<br/>
+NOPE<br/>
+We can't recognize what you mean by that :(  <br/>
+Was it a spelling error? Would you like to try again? (y/n)<br/>
+NOPE<br/>
+Okay, maybe you want to know about coffee instead! (y/n)<br/>
+y<br/>
+Do you want to learn about coffee ? (y/n)<br/>
+y<br/>
+Coffee contains caffeine<br/>
+Did you know you can get addicted to caffeine?<br/>
+Bet, you didnt' know :) <br/>
+Have a nice day!<br/>
