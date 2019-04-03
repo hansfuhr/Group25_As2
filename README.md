@@ -81,7 +81,6 @@ sample output:<br/>
         
  <h3>(10 points) Sentimental analysis tools</h3>
       - This was actaully already implemented in our A2 since we had two separate greetings depending on user inputs. If they entered "good", we had greetings_good function that will motivate them even more to suit their needs. On the other hand, if they answered "bad" we had greetings_bad function to cheer them up <br/><br/>
-      
       - Sample Output: <br/> 
       ex1) "Happy" <br/>
       (AutoBot) How is your day going today? <br/>
