@@ -1,6 +1,10 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import random
 import sys
 import time
+from nltk.corpus import wordnet
+import nltk
 
 
 class Vehicle(object):
@@ -125,7 +129,7 @@ def getVehicles():
     vehicleList.append(Vehicle(76049, "car", 8, "Ford", "Expedition Limited MAX", 21))
     vehicleList.append(Vehicle(36900, "suv", 5, "Audi", "Q2", 37))
     vehicleList.append(Vehicle(44536, "car", 5, "Audi", "A3", 33))
-    vehicleList.append(Vehicle(93206, "car", 5, "Audi", "RS 5 Coupe", 27))
+    vehicleList.append(Vehicle(93206, "car", 5, "Audi", "RS 5 Coupé", 27))
     vehicleList.append(Vehicle(48003, "car", 5, "Audi", "A4 Avant", 27))
     vehicleList.append(Vehicle(68537, "car", 5, "Audi", "S4 Avant", 30))
     # Tayler Verhaegen(Nissan, KIA, Volkswagen, Cadillac)
@@ -159,6 +163,19 @@ def getVehicles():
     vehicleList.append(Vehicle(5, "car", 2, "Cardboard", "Box", 999))
     vehicleList.append(Vehicle(7000, "car", 4, "Toyota", "Celica", 32))
 
+    #Motorcylces
+    vehicleList.append(Vehicle(25299, "motorcycle", 2, "Yamaha", "YZF-R1M", 41))
+    vehicleList.append(Vehicle(20999, "motorcycle", 2, "Yamaha", "YZF-R1", 41))
+    vehicleList.append(Vehicle(6299, "motorcycle", 2, "Yamaha", "YZF-R3", 35))
+    vehicleList.append(Vehicle(8499, "motorcycle", 2, "Yamaha", "MT-07", 31))
+    vehicleList.append(Vehicle(25299, "motorcycle", 2, "Yamaha", "YZF-R1M", 41))
+
+    vehicleList.append(Vehicle(61200, "motorcycle", 2, "Kawasaki", "Ninja H2R", 45))
+    vehicleList.append(Vehicle(32500, "motorcycle", 2, "Kawasaki", "Ninja H2", 38))
+    vehicleList.append(Vehicle(17399, "motorcycle", 2, "Kawasaki", "Ninja ZX-10RR", 38))
+    vehicleList.append(Vehicle(11999, "motorcycle", 2, "Kawasaki", "Ninja ZX-6R", 35))
+
+
     # ------------------------------------------End of Database-------------------------------------------------------------------
     return vehicleList
 
@@ -167,7 +184,7 @@ def getVehicles():
 vehicleList = getVehicles()
 
 endcondition = False
-# ----------------------------------------Text input and responses for text-matching-----------------------------------------------
+# ----------------------------------------Text and responses for text-matching-----------------------------------------------
 
 greetings_i = ("yes", "yup", "car", "truck", "suv", "sure", "ok", "okay", "perhaps", "great")
 greetings_r = ("Excellent, let's start with your name", "That's great to hear, what can I call you?",
@@ -191,19 +208,67 @@ fuel_r = ("What is the worst fuel efficiency you would be okay with? \n (Anythin
 price_i = ("price", "cost", "amount", "price,", "cost,", "amount,")
 price_r = ("What is the maximum you would like to spend?", "How much are you looking to spend?")
 type_i = ("type", "function", "type,", "function,")
-type_r = ("Are you looking for a car, truck or suv?", "Are you a car, truck, or suv kind of person?")
+type_r = ("Are you looking for a car, truck, suv, or motorcycle?", "Are you a car, truck, suv, or motorcycle kind of person?")
 brand_i = ("brand", "brand,", "make", "make,")
 brand_r = ("What brand are you after?", "What brand are you interested in?")
 ending_i = ("yes", "thanks", "good", "yea", "yeah", "sure", "cool", "absolutely", "okay", "ok")
 
 
 # ---------------------------Functions for text-finding given a sentance as input---------------------------------------
+def mistake():
+
+    topics = ["computers","coffee","phones","country","food"]
+    rand = random.choice(topics)
+    print("We can't recognize what you mean by that :(  ")
+    sentance = input("Was it a spelling error? Would you like to try again? (y/n)")
+    if(sentance == 'y'):
+        return True
+    else:
+        print("Okay, maybe you want to know about " + rand + " instead! (y/n)")
+        sentance = input()
+        if(sentance == 'y'):
+            print("Do you want to learn about " + rand + " ? (y/n)")
+            sentance2 = input()
+            if(sentance2 =='y'):
+                if(rand =="computers"):
+                    print("Apple's macbook is so expensive")
+                    print("Did you know if you fully upgrade macbook pro 15 with touchbar")
+                    print("You have to pay like 8400 dollars")
+                    print("WooooooW")
+                elif(rand =="coffee"):
+                    print("Coffee contains caffeine")
+                    print("Did you know you can get addicted to caffeine?")
+                    print("Bet, you didnt' know :) ")
+                elif(rand == "phones"):
+                    print("Iphones suck")
+                elif(rand == "country"):
+                    print("Did you know that North Korea is bigger than South Korea? :) ")
+                elif(rand == "food"):
+                    print("Around 60% of world population do not know how to cook an egg properply")
+        else:
+             print("Alright than! Maybe I will tell you the synonyms of 'happy' to brighten up your day!")
+             synonyms = []
+             antonyms = []
+
+             for syn in wordnet.synsets("happy"):
+                 for l in syn.lemmas():
+                     synonyms.append(l.name())
+                     if l.antonyms():
+                         antonyms.append(l.antonyms()[0].name())
+
+             print(set(synonyms))
+
+        print("Have a nice day!")
+        sys.exit()
+
+
+
 # ToString method for a vehicle
 def tostring(Vehicle):
     print(
-            "Here is a/an " + Vehicle.type + ". \nIt is a 2019 " + Vehicle.brand + " " + Vehicle.name + ", it seats " + str(
-        Vehicle.seats) + " \nand gets " + str(Vehicle.fueleff) +
-            " miles to the gallon. \nYou can walk away with this " + Vehicle.type + " for $" + str(Vehicle.price))
+        "Here is a/an " + Vehicle.type + ". \nIt is a 2019 " + Vehicle.brand + " " + Vehicle.name + ", it seats " + str(
+            Vehicle.seats) + " \nand gets " + str(Vehicle.fueleff) +
+        " miles to the gallon. \nYou can walk away with this " + Vehicle.type + " for $" + str(Vehicle.price))
     if (Vehicle.fueleff > 100):
         print("This vehicle is also electric!")
 
@@ -220,31 +285,29 @@ def getcar(list):
 
 
 def check_greeting(sentance):
-    words = sentance.split()
+    words = nltk.word_tokenize(sentance)  # POS tagging
     for word in words:
         if word.lower() in greetings_i:
-            print (random.choice(greetings_r))
-
-
-def check_greeting2(sentance):
-    words = sentance.split()
-    for word in words:
-        if word.lower() in greetings2_i:
-            print (random.choice(greetings2_r))
-
+            print(random.choice(greetings_r))
+            return
+    retry = mistake()
+    if (retry == True):
+        print(random.choice(welcome))
+        sentance = input()
+        check_greeting(sentance)
 
 def check_good(sentance):
-    words = sentance.split()
+    words = nltk.word_tokenize(sentance)
     for word in words:
         if word.lower() in good_i:
-            print (random.choice(good_r))
+            print(random.choice(good_r))
 
 
 def check_bad(sentance):
-    words = sentance.split()
+    words = nltk.word_tokenize(sentance)
     for word in words:
         if word.lower() in bad_i:
-            print (random.choice(bad_r))
+            print(random.choice(bad_r))
 
 
 def check_name(username):
@@ -255,72 +318,52 @@ def check_name(username):
 
 
 def check_seats(sentance):
-    words = sentance.split()
+    words = nltk.word_tokenize(sentance)
     for word in words:
         if word.lower() in seats_i:
             print(random.choice(seats_r))
             seats = input("Seats:")
-            time.sleep(1)
-            print(" . ")
-            time.sleep(1)
-            print(" . ")
-            time.sleep(1)
+
             uservehicle.setseats(seats)
 
 
 def check_brand(sentance):
-    words = sentance.split()
+    words = nltk.word_tokenize(sentance)
     for word in words:
         if word.lower() in brand_i:
             print(random.choice(brand_r))
             brand = input("Brand:")
-            time.sleep(1)
-            print(" . ")
-            time.sleep(1)
-            print(" . ")
-            time.sleep(1)
+
             uservehicle.setbrand(brand)
 
 
 def check_fuel(sentence):
-    words = sentence.split()
+    words = nltk.word_tokenize(sentance)
     for word in words:
         if word.lower() in fuel_i:
             print(fuel_r)
             fuel_eff = input("Fuel efficiency level(in mpg): ")
-            time.sleep(1)
-            print(" . ")
-            time.sleep(1)
-            print(" . ")
-            time.sleep(1)
+
             uservehicle.setfueleff(fuel_eff)
 
 
 def check_price(sentence):
-    words = sentence.split()
+    words = nltk.word_tokenize(sentance)
     for word in words:
         if word.lower() in price_i:
             print(random.choice(price_r))
             price = input("Price $:")
-            time.sleep(1)
-            print(" . ")
-            time.sleep(1)
-            print(" . ")
-            time.sleep(1)
+
             uservehicle.setprice(price)
 
 
 def check_type(sentance):
-    words = sentance.split()
+    words = nltk.word_tokenize(sentance)
     for word in words:
         if word.lower() in type_i:
             print(random.choice(type_r))
-            type = input("Car, truck, or SUV:")
-            time.sleep(1)
-            print(" . ")
-            time.sleep(1)
-            print(" . ")
-            time.sleep(1)
+            type = input("Car, truck, SUV, or motorcycle:")
+
             uservehicle.settype(type.lower())
 
 
@@ -328,12 +371,8 @@ def runagain():
     ending_r = ("My pleasure " + username + ", have a great day!", "Well have a wonderful day " + username,
                 "I'm glad I could help, bye for now!")
     sentance = input("Would you like to search for another vehicle?")
-    time.sleep(1)
-    print(" . ")
-    time.sleep(1)
-    print(" . ")
-    time.sleep(1)
-    words = sentance.split()
+
+    words = nltk.word_tokenize(sentance)
     for word in words:
         if word.lower() in greetings_i:
             print("\n")
@@ -346,26 +385,18 @@ def runagain():
 def check_ending(sentance, username, vehicle):
     ending_r = ("My pleasure " + username + ", have a great day!", "Well have a wonderful day " + username,
                 "I'm glad I could help, bye for now!")
-    words = sentance.split()
+    words = nltk.word_tokenize(sentance)
     for word in words:
         if word.lower() in ending_i:
             finance = input("Would you like to know lease option for this vehicle?")
-            time.sleep(1)
-            print(" . ")
-            time.sleep(1)
-            print(" . ")
-            time.sleep(1)
+
             # entering okay does'nt work
 
-            words = finance.split()
+            words = nltk.word_tokenize(sentance)
             for word in words:
                 if word.lower() in ending_i:
                     years = input("In how many years would you like to pay off your " + vehicle.name + "?")
-                    time.sleep(1)
-                    print(" . ")
-                    time.sleep(1)
-                    print(" . ")
-                    time.sleep(1)
+
                     months = int(years) * 26
                     print("The rate would be $" + str(
                         round(vehicle.price / months, 2)) + " bi-weekly for the next " + str(years) + " year/years")
@@ -374,32 +405,35 @@ def check_ending(sentance, username, vehicle):
     return False
 
 
+# spelling check(5points Jae Ung Kim)
+# from spellchecker import SpellChecker
+#
+# spell = SpellChecker()
+#
+# # find those words that may be misspelled
+# misspelled = spell.unknown(['let', 'us', 'wlak','on','the','groun'])
+#
+# for word in misspelled:
+#     # Get the one `most likely` answer
+#     print(spell.correction(word))
+#
+#     # Get a list of `likely` options
+#     print(spell.candidates(word))
+
+
+
 # -------------------------------------------Code for actual program-----------------------------------------------
 print(random.choice(welcome))
 print("We currently have " + str(len(vehicleList)) + " vehicles in our inventory.")
 sentance = input()
-time.sleep(1)
-print(" . ")
-time.sleep(1)
-print(" . ")
-time.sleep(1)
 check_greeting(sentance)
-check_greeting2(sentance)
 username = input("Name:")
-time.sleep(1)
-print(" . ")
-time.sleep(1)
-print(" . ")
-time.sleep(1)
 check_name(username)
 sentance = input("How is your day going?\n")
-time.sleep(1)
-print(" . ")
-time.sleep(1)
-print(" . ")
-time.sleep(1)
+
 check_bad(sentance)
 check_good(sentance)
+
 endconditionmain = False
 while (endconditionmain == False):
     uservehicle = Vehicle(9999999, "", 0, "", "", 999)
@@ -429,15 +463,7 @@ while (endconditionmain == False):
         vehicleList = [vehicle for vehicle in vehicleList if vehicle.fueleff >= int(uservehicle.fueleff)]
     if (int(uservehicle.seats) > 0):
         vehicleList = [vehicle for vehicle in vehicleList if vehicle.seats == int(uservehicle.seats)]
-    time.sleep(1)
-    print(" . ")
-    time.sleep(1)
-    print(" . ")
-    time.sleep(1)
-    print(" . ")
-    time.sleep(1)
-    print(" . ")
-    time.sleep(1)
+
     print("\nI have found " + str(len(vehicleList)) + " vehicles that match your criteria!")
     while (endcondition == False):
         print("\n")
@@ -448,11 +474,7 @@ while (endconditionmain == False):
 
         vehicle = getcar(vehicleList)
         sentance = input("Are you happy with this vehicle?")
-        time.sleep(1)
-        print(" . ")
-        time.sleep(1)
-        print(" . ")
-        time.sleep(1)
+
         endcondition = check_ending(sentance, username, vehicle)
         if (len(vehicleList) < 1):
             print("I'm sorry, that is all the cars that match the given criteria.")
